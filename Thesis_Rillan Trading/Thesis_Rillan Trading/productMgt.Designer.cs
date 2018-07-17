@@ -104,6 +104,12 @@
             // 
             this.cmbBox_itemCateg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbBox_itemCateg.FormattingEnabled = true;
+            this.cmbBox_itemCateg.Items.AddRange(new object[] {
+            "Clothings",
+            "Kitchenware",
+            "School Supplies",
+            "Hardware Supplies",
+            "General Merchandise"});
             this.cmbBox_itemCateg.Location = new System.Drawing.Point(120, 281);
             this.cmbBox_itemCateg.Name = "cmbBox_itemCateg";
             this.cmbBox_itemCateg.Size = new System.Drawing.Size(203, 28);
@@ -122,6 +128,11 @@
             // 
             this.cmbBox_itemBrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbBox_itemBrand.FormattingEnabled = true;
+            this.cmbBox_itemBrand.Items.AddRange(new object[] {
+            "Cattleya",
+            "Green Apple",
+            "Muji",
+            "Avanza"});
             this.cmbBox_itemBrand.Location = new System.Drawing.Point(120, 223);
             this.cmbBox_itemBrand.Name = "cmbBox_itemBrand";
             this.cmbBox_itemBrand.Size = new System.Drawing.Size(203, 28);

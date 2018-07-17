@@ -92,9 +92,12 @@ namespace Thesis_Rillan_Trading
                     DataTable dt = new DataTable();
                     adp.Fill(dt);
                     conn.Close();
-
                     
-                    if (dt.Rows.Count == 1) // DB returned 1 row  
+                    if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("User do not exist.", "System Message", MessageBoxButtons.OK);
+                    }
+                    else if (dt.Rows.Count == 1) // DB returned 1 row  
                     {
                         
                         // gets data from DB >> pass the values to its corresponding variables
@@ -127,6 +130,7 @@ namespace Thesis_Rillan_Trading
                     {
                         MessageBox.Show("The user credentials are incorrect.", "Error!", MessageBoxButtons.OK);
                     }
+
                 }
             }
             catch (Exception ee)

@@ -31,6 +31,7 @@ namespace Thesis_Rillan_Trading
         private void productMgt_Load(object sender, EventArgs e)
         {
             productTableLoad();
+            //MessageBox.Show(cmbBox_itemBrand.Items[0].ToString(), "Trial", MessageBoxButtons.OK);
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -47,27 +48,19 @@ namespace Thesis_Rillan_Trading
         // - - Data Grid Methods - - 
         private void dataGV_prodList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string b, c, y;
+
             if (MessageBox.Show("Do you want to edit this product's details?", "Edit Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 item_id = int.Parse(dataGV_prodList.SelectedRows[0].Cells[0].Value.ToString());
                 tbox_itemCode.Text = dataGV_prodList.SelectedRows[0].Cells[1].Value.ToString();
                 tbox_itemDesc.Text = dataGV_prodList.SelectedRows[0].Cells[2].Value.ToString();
 
-                for(int x = 0; x <= cmbBox_itemBrand.Items.Count; x++)
-                {
-                    if (dataGV_prodList.SelectedRows[0].Cells[3].Value.ToString() == cmbBox_itemBrand.Items[x].ToString())
-                    {
-                        cmbBox_itemBrand.Text = cmbBox_itemBrand.Items[x].ToString();
-                    }
-                }
+                b = dataGV_prodList.SelectedRows[0].Cells[3].Value.ToString();
+                cmbBox_itemBrand.SelectedItem = cmbBox_itemBrand.FindString(b);
 
-                for (int x = 0; x <= cmbBox_itemCateg.Items.Count; x++)
-                {
-                    if (dataGV_prodList.SelectedRows[0].Cells[4].Value.ToString() == cmbBox_itemCateg.Items[x].ToString())
-                    {
-                        cmbBox_itemCateg.Text = cmbBox_itemCateg.Items[x].ToString();
-                    }
-                }
+                c = dataGV_prodList.SelectedRows[0].Cells[4].Value.ToString();
+                cmbBox_itemCateg.SelectedItem = cmbBox_itemCateg.FindString(c);
                 
                 tbox_sellingPrice.Text = dataGV_prodList.SelectedRows[0].Cells[5].Value.ToString();
 
@@ -83,6 +76,7 @@ namespace Thesis_Rillan_Trading
 
         // - - Defined Functions - - 
 
+        // - - Function: It will load the product data from database to the datagrid view
         private void productTableLoad()
         {
             try
@@ -109,9 +103,10 @@ namespace Thesis_Rillan_Trading
             dataGV_prodList.Columns["item_sellingPrice"].HeaderText = "Selling Price";
         }
 
+        // - - Function: Allows user to add an item
         private void addProduct()
         {
-            //Validation - - if either of the fields do not contain an input, it will not proceed to adding the item
+            //Validation - - if either of the fields do not contain an input, it will not proceed on adding the item to database
             if (string.IsNullOrWhiteSpace(tbox_itemCode.Text.ToString()) || string.IsNullOrWhiteSpace(tbox_itemDesc.Text.ToString()) || string.IsNullOrWhiteSpace(cmbBox_itemBrand.Text.ToString()) ||
                 string.IsNullOrWhiteSpace(cmbBox_itemCateg.Text.ToString()) || string.IsNullOrWhiteSpace(tbox_sellingPrice.Text.ToString()))
             {
@@ -143,29 +138,19 @@ namespace Thesis_Rillan_Trading
                         productTableLoad();
                         fieldsReset();
                     }
+                    
                 }
                 catch (Exception x)
                 {
                     MessageBox.Show(x.ToString());
                 }
-
-                // - - If the brand and category are not included in the items collection, it will automatically add it to the list
-                for (int x = 1; x <= cmbBox_itemBrand.Items.Count; x++)
-                {
-                    if (cmbBox_itemBrand.Items[x].ToString() != brand || cmbBox_itemBrand.Items[x].ToString() == "")
-                    {
-                        cmbBox_itemBrand.Items.Add(brand);
-                    }
-                }
-
-                for (int x = 1; x <= cmbBox_itemCateg.Items.Count; x++)
-                {
-                    if (cmbBox_itemCateg.Items[x].ToString() != categ || cmbBox_itemCateg.Items[x].ToString() == "")
-                    {
-                        cmbBox_itemCateg.Items.Add(categ);
-                    }
-                }
+                
             }
+        }
+
+        private void updateProduct()
+        {
+
         }
 
         private void fieldsReset()
