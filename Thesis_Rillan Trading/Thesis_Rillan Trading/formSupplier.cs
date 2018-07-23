@@ -87,14 +87,13 @@ namespace Thesis_Rillan_Trading
             {
                 supp_id = int.Parse(dataGV_supplier.SelectedRows[0].Cells[0].Value.ToString());
                 tbox_supplierName.Text = dataGV_supplier.SelectedRows[0].Cells[1].Value.ToString();
-                tbox_faxNum.Text = dataGV_supplier.SelectedRows[0].Cells[4].Value.ToString();
-                tbox_contactNum.Text = dataGV_supplier.SelectedRows[0].Cells[3].Value.ToString();
                 tbox_supplierAddress.Text = dataGV_supplier.SelectedRows[0].Cells[2].Value.ToString();
+                tbox_contactPerson.Text = dataGV_supplier.SelectedRows[0].Cells[3].Value.ToString();
+                tbox_emailAddr.Text = dataGV_supplier.SelectedRows[0].Cells[4].Value.ToString();
+                tbox_contactNum.Text = dataGV_supplier.SelectedRows[0].Cells[5].Value.ToString();
+                tbox_faxNum.Text = dataGV_supplier.SelectedRows[0].Cells[6].Value.ToString();
 
-                /*tbox_firstName.BackColor = Color.LightBlue;
-                tbox_lastName.BackColor = Color.LightBlue;
-                tbox_middleName.BackColor = Color.LightBlue;
-                tbox_mobileNum.BackColor = Color.LightBlue;*/
+
                 btn_delete.Text = "Cancel";
                 btn_Save.Text = "Update";
                 btn_delete.Visible = true;
@@ -137,11 +136,11 @@ namespace Thesis_Rillan_Trading
             {
                 MessageBox.Show("Please fill in for supplier's name");
             }
-            else if (string.IsNullOrWhiteSpace(tbox_faxNum.Text.ToString()))
+            else if (string.IsNullOrWhiteSpace(tbox_contactPerson.Text.ToString()))
             {
                 MessageBox.Show("Please fill in for supplier's fax number");
             }
-            else if (string.IsNullOrWhiteSpace(tbox_contactNum.Text.ToString()))
+            else if (string.IsNullOrWhiteSpace(tbox_emailAddr.Text.ToString()))
             {
                 MessageBox.Show("Please fill in for supplier's contact number");
             }
@@ -157,7 +156,7 @@ namespace Thesis_Rillan_Trading
 
                     //Inserting  values to MySql Emp table
                     MySqlCommand DatabaseCommand = conn.CreateCommand();
-                    DatabaseCommand.CommandText = "INSERT INTO supplier (supp_name, supp_faxNum, supp_contactNum, supp_address)VALUES ('" + tbox_supplierName.Text + "','" + tbox_faxNum.Text + "','" + tbox_contactNum.Text + "','" + tbox_supplierAddress.Text + "')";
+                    DatabaseCommand.CommandText = "INSERT INTO supplier (supp_name, supp_faxNum, supp_contactNum, supp_address)VALUES ('" + tbox_supplierName.Text + "','" + tbox_contactPerson.Text + "','" + tbox_emailAddr.Text + "','" + tbox_supplierAddress.Text + "')";
                     if (MessageBox.Show("Are you sure you want to add this supplier profile?", "Add employee", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         DatabaseCommand.ExecuteNonQuery();
@@ -182,8 +181,8 @@ namespace Thesis_Rillan_Trading
             {
                 try
                 {
-                    String q = "UPDATE supplier SET supp_name = '" + tbox_supplierName.Text + "', supp_faxNum = '" + tbox_faxNum.Text + "', " +
-                        " supp_contactNum = '" + tbox_contactNum.Text + "', supp_address = '" + tbox_supplierAddress.Text + "' WHERE supp_id = '" + supp_id + "' ";
+                    String q = "UPDATE supplier SET supp_name = '" + tbox_supplierName.Text + "', supp_faxNum = '" + tbox_contactPerson.Text + "', " +
+                        " supp_contactNum = '" + tbox_emailAddr.Text + "', supp_address = '" + tbox_supplierAddress.Text + "' WHERE supp_id = '" + supp_id + "' ";
 
                     conn.Open();
                     MySqlDataAdapter adapter = new MySqlDataAdapter(q, conn);
@@ -211,8 +210,8 @@ namespace Thesis_Rillan_Trading
         private void fieldsReset() //clears all the textbox fields
         {
             tbox_supplierName.Clear();
-            tbox_faxNum.Clear();
-            tbox_contactNum.Clear();
+            tbox_contactPerson.Clear();
+            tbox_emailAddr.Clear();
             tbox_supplierAddress.Clear();
         }
 

@@ -18,7 +18,7 @@ namespace Thesis_Rillan_Trading
         public MySqlCommand command;
         public MySqlDataAdapter adapter;
         public DataTable dataTable;
-        int item_id;
+        int item_id, brand_id, categ_id;
         string itemCode, itemDesc, brand, categ;
         float sellingPrice;
 
@@ -30,8 +30,54 @@ namespace Thesis_Rillan_Trading
 
         private void productMgt_Load(object sender, EventArgs e)
         {
+            // Loads data from database
             productTableLoad();
-            //MessageBox.Show(cmbBox_itemBrand.Items[0].ToString(), "Trial", MessageBoxButtons.OK);
+
+            // Shows Save and Delete button while hiding Update and Cancel buttons
+            btn_Update.Visible = false;
+            btn_Cancel.Visible = false;
+
+            // Loads item brands to combo box
+            try
+            {
+                conn.Open();
+                query = "SELECT item_brand FROM item_brand;";
+                command = new MySqlCommand(query, conn);
+                MySqlDataReader dr = command.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    cmbBox_itemBrand.Items.Add(dr[0]);
+                }
+
+                conn.Close();
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+
+            // Loads item categories to combo box
+            try
+            {
+                conn.Open();
+                query = "SELECT item_category FROM item_category;";
+                command = new MySqlCommand(query, conn);
+                MySqlDataReader dr = command.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    cmbBox_itemCateg.Items.Add(dr[0]);
+                }
+
+                conn.Close();
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+                conn.Close();
+            }
+
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -45,44 +91,56 @@ namespace Thesis_Rillan_Trading
             addProduct();
         }
 
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            updateProduct();
+
+            // shows save and delete button
+            btn_Save.Visible = true;
+            btn_delete.Visible = true;
+
+            // hides update and cancel button
+            btn_Update.Visible = false;
+            btn_Cancel.Visible = false;
+
+        }
+
         // - - Data Grid Methods - - 
         private void dataGV_prodList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string b, c, y;
-
             if (MessageBox.Show("Do you want to edit this product's details?", "Edit Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 item_id = int.Parse(dataGV_prodList.SelectedRows[0].Cells[0].Value.ToString());
                 tbox_itemCode.Text = dataGV_prodList.SelectedRows[0].Cells[1].Value.ToString();
                 tbox_itemDesc.Text = dataGV_prodList.SelectedRows[0].Cells[2].Value.ToString();
-
-                b = dataGV_prodList.SelectedRows[0].Cells[3].Value.ToString();
-                cmbBox_itemBrand.SelectedItem = cmbBox_itemBrand.FindString(b);
-
-                c = dataGV_prodList.SelectedRows[0].Cells[4].Value.ToString();
-                cmbBox_itemCateg.SelectedItem = cmbBox_itemCateg.FindString(c);
-                
+                cmbBox_itemBrand.Text = dataGV_prodList.SelectedRows[0].Cells[3].Value.ToString();
+                cmbBox_itemCateg.Text = dataGV_prodList.SelectedRows[0].Cells[4].Value.ToString();
                 tbox_sellingPrice.Text = dataGV_prodList.SelectedRows[0].Cells[5].Value.ToString();
 
-                btn_delete.Text = "Cancel";
-                btn_Save.Text = "Update";
-                btn_delete.Visible = true;
-                //String i = "asd" + supp_id;
+                //Shows update and cancel button
+                btn_Update.Visible = true;
+                btn_Cancel.Visible = true;
 
+                // Hides save and delete button
+                btn_Save.Visible = false;
+                btn_delete.Visible = false;
+                //String i = "asd" + supp_id;
+                
             }
         }
-
-       
-
+        
         // - - Defined Functions - - 
 
-        // - - Function: It will load the product data from database to the datagrid view
+        string query;
+
+        // Load Product Table to Data Grid
         private void productTableLoad()
         {
             try
             {
                 conn.Open();
-                command = new MySqlCommand("SELECT * FROM item", conn);
+                query = "SELECT i.item_id, i.item_code, i.item_desc, b.item_brand, c.item_category, i.item_sellingPrice FROM item i INNER JOIN item_brand b ON i.item_brand_fk = b.item_brand_id INNER JOIN item_category c ON i.item_category_fk = c.item_categ_id;";
+                command = new MySqlCommand(query, conn);
 
                 adapter = new MySqlDataAdapter(command);
                 dataTable = new DataTable();
@@ -93,6 +151,7 @@ namespace Thesis_Rillan_Trading
             catch (Exception x)
             {
                 MessageBox.Show(x.ToString());
+                conn.Close();
             }
 
             dataGV_prodList.Columns["item_id"].Visible = false;
@@ -103,7 +162,7 @@ namespace Thesis_Rillan_Trading
             dataGV_prodList.Columns["item_sellingPrice"].HeaderText = "Selling Price";
         }
 
-        // - - Function: Allows user to add an item
+        // - - Add New Item - -
         private void addProduct()
         {
             //Validation - - if either of the fields do not contain an input, it will not proceed on adding the item to database
@@ -114,6 +173,7 @@ namespace Thesis_Rillan_Trading
             }
             else
             {
+                // Assigns the values from text boxes and combo boxes to their respective variables
                 itemCode = tbox_itemCode.Text;
                 itemDesc = tbox_itemDesc.Text;
                 brand = cmbBox_itemBrand.Text;
@@ -124,9 +184,10 @@ namespace Thesis_Rillan_Trading
                 {
                     conn.Open();
 
-                    //Inserting  values to MySql Emp table
+                    //Inserting  values to MySql item table
                     MySqlCommand DatabaseCommand = conn.CreateCommand();
-                    DatabaseCommand.CommandText = "INSERT INTO item (item_code, item_desc, item_brand, item_category, item_sellingPrice) VALUES ('" + itemCode + "','" + itemDesc + "','" + brand + "','" + categ + "','" + sellingPrice + "')";
+                    DatabaseCommand.CommandText = "INSERT INTO item (item_code, item_desc, item_brand_fk, item_category_fk, item_sellingPrice) " +
+                        " VALUES ('" + itemCode + "','" + itemDesc + "','" + getItemBrandID() + "','" + getItemCategID() + "','" + sellingPrice + "')";
                     if (MessageBox.Show("Are you sure you want to add this item to the database?", "Add Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         DatabaseCommand.ExecuteNonQuery();
@@ -148,9 +209,157 @@ namespace Thesis_Rillan_Trading
             }
         }
 
-        private void updateProduct()
+        // - - Update Product Details - -
+        private void updateProduct() //edit function
         {
+            try
+            {
+            
+                String q = "UPDATE item SET item_code = '" + itemCode + "', item_desc = '" + itemDesc + "',  item_brand_fk = '" + getItemBrandID() + "', item_category_fk = '" + getItemCategID() + "', item_sellingPrice = '" + sellingPrice + "'  WHERE item_id = '" + item_id + "' ";
 
+                conn.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(q, conn);
+                int count = adapter.SelectCommand.ExecuteNonQuery();
+
+                if (count >= 1)
+                {
+                    MessageBox.Show("Employee successfully Updated!");
+                }
+                conn.Close();
+
+                productTableLoad();
+                fieldsReset();
+                btn_Save.Visible = true;
+                btn_delete.Visible = true;
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+            
+        }
+
+        
+
+        // - - Gets the equivalent item brand ID of the item brand string - - 
+        private int getItemBrandID()
+        {
+            try
+            {
+                query = "SELECT * FROM item_brand WHERE item_brand = '" + brand + "';";
+                command = new MySqlCommand(query, conn);
+                MySqlDataAdapter adp = new MySqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+
+                if (dt.Rows.Count == 1) // this means that the query returned a data
+                {
+                    // Assigns the value from database to int variable 'brand_id'
+                    brand_id = int.Parse(dt.Rows[0]["item_brand_id"].ToString());
+                }
+                else
+                {
+                    // In this block, the function should be adding the new text to database and then gets its item brand ID
+                    //addNewItemBrand();
+                }
+
+                
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+                conn.Close();
+            }
+
+            return brand_id;
+        }
+
+        // - - Gets the equivalent item category ID of the item category string - - 
+        private int getItemCategID()
+        {
+            try
+            {
+                query = "SELECT * FROM item_category WHERE item_category = '" + categ + "';";
+                command = new MySqlCommand(query, conn);
+                MySqlDataAdapter adp = new MySqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+
+                if (dt.Rows.Count == 1)
+                {
+                    // Assigns the value from database to int variable 'categ_id'
+                    categ_id = int.Parse(dt.Rows[0]["item_categ_id"].ToString());
+                }
+                else
+                {
+                    // In this block, the function should be adding the new text to database and then gets its item category ID
+                    //addNewItemCategory();
+                }
+
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+                conn.Close();
+            }
+
+            return categ_id;
+        }
+
+        private int addNewItemBrand()
+        {
+            try
+            {
+                
+                //Inserting  values to MySql item table
+                MySqlCommand DatabaseCommand = conn.CreateCommand();
+                DatabaseCommand.CommandText = "INSERT INTO item_brand (item_brand) VALUES ('" + brand + "')";
+
+                query = "SELECT * FROM item_brand WHERE '" + brand + "' = item_brand;";
+                command = new MySqlCommand(query, conn);
+                MySqlDataAdapter adp = new MySqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+
+                if (dt.Rows.Count == 1)
+                {
+                    brand_id = int.Parse(dt.Rows[0]["item_brand_id"].ToString());
+                }
+
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+
+            return brand_id;
+        }
+
+        private int addNewItemCategory()
+        {
+            try
+            {
+                //Inserting  values to MySql item table
+                MySqlCommand DatabaseCommand = conn.CreateCommand();
+                DatabaseCommand.CommandText = "INSERT INTO item_category (item_category) VALUES ('" + categ + "')";
+
+                query = "SELECT * FROM item_category WHERE '" + categ + "' = item_category;";
+                command = new MySqlCommand(query, conn);
+                MySqlDataAdapter adp = new MySqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+
+                if (dt.Rows.Count == 1)
+                {
+                    categ_id = int.Parse(dt.Rows[0]["item_categ_id"].ToString());
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+
+            return categ_id;
         }
 
         private void fieldsReset()
