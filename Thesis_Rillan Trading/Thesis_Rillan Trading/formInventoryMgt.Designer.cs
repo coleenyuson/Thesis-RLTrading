@@ -34,6 +34,8 @@
             this.btn_Settings = new System.Windows.Forms.Button();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.pnl_window = new System.Windows.Forms.Panel();
+            this.userControl_invHome = new Thesis_Rillan_Trading.inventoryHome();
+            this.userControl_prodList = new Thesis_Rillan_Trading.productMgt();
             this.pnl_sideMenu = new System.Windows.Forms.Panel();
             this.btn_dashboard = new System.Windows.Forms.Button();
             this.btn_productMgt = new System.Windows.Forms.Button();
@@ -45,8 +47,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_DateTime = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.userControl_invHome = new Thesis_Rillan_Trading.inventoryHome();
-            this.userControl_prodList = new Thesis_Rillan_Trading.productMgt();
             this.pnl_Header.SuspendLayout();
             this.pnl_window.SuspendLayout();
             this.pnl_sideMenu.SuspendLayout();
@@ -118,6 +118,28 @@
             this.pnl_window.Name = "pnl_window";
             this.pnl_window.Size = new System.Drawing.Size(1097, 624);
             this.pnl_window.TabIndex = 22;
+            // 
+            // userControl_invHome
+            // 
+            this.userControl_invHome.BackColor = System.Drawing.SystemColors.Control;
+            this.userControl_invHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_invHome.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.userControl_invHome.Location = new System.Drawing.Point(0, 0);
+            this.userControl_invHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.userControl_invHome.Name = "userControl_invHome";
+            this.userControl_invHome.Size = new System.Drawing.Size(1097, 624);
+            this.userControl_invHome.TabIndex = 1;
+            // 
+            // userControl_prodList
+            // 
+            this.userControl_prodList.BackColor = System.Drawing.Color.Gainsboro;
+            this.userControl_prodList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_prodList.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.userControl_prodList.Location = new System.Drawing.Point(0, 0);
+            this.userControl_prodList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.userControl_prodList.Name = "userControl_prodList";
+            this.userControl_prodList.Size = new System.Drawing.Size(1097, 624);
+            this.userControl_prodList.TabIndex = 0;
             // 
             // pnl_sideMenu
             // 
@@ -268,28 +290,6 @@
             this.lbl_DateTime.Size = new System.Drawing.Size(158, 20);
             this.lbl_DateTime.TabIndex = 3;
             this.lbl_DateTime.Text = "hh:mm January 1, 2018";
-            // 
-            // userControl_invHome
-            // 
-            this.userControl_invHome.BackColor = System.Drawing.SystemColors.Control;
-            this.userControl_invHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_invHome.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.userControl_invHome.Location = new System.Drawing.Point(0, 0);
-            this.userControl_invHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.userControl_invHome.Name = "userControl_invHome";
-            this.userControl_invHome.Size = new System.Drawing.Size(1097, 624);
-            this.userControl_invHome.TabIndex = 1;
-            // 
-            // userControl_prodList
-            // 
-            this.userControl_prodList.BackColor = System.Drawing.Color.Gainsboro;
-            this.userControl_prodList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_prodList.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.userControl_prodList.Location = new System.Drawing.Point(0, 0);
-            this.userControl_prodList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.userControl_prodList.Name = "userControl_prodList";
-            this.userControl_prodList.Size = new System.Drawing.Size(1097, 624);
-            this.userControl_prodList.TabIndex = 0;
             // 
             // formInventoryMgt
             // 
