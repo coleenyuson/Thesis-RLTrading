@@ -16,8 +16,9 @@ namespace Thesis_Rillan_Trading
         // Variable for Reference Forms
         public Form refAdminHome { get; set; }
         public Form refSupplier { get; set; }
-        public int ref_Emp_empID;
         public Form refInventory { get; set; }
+        public Form refCustMgt { get; set; }
+        public int ref_Emp_empID;
 
 
         public formEmployee()

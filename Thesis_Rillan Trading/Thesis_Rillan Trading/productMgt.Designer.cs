@@ -44,11 +44,13 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.dataGV_prodList = new System.Windows.Forms.DataGridView();
-            this.btn_refresh = new System.Windows.Forms.Button();
-            this.picBox_Search = new System.Windows.Forms.PictureBox();
             this.cmbBox_filter = new System.Windows.Forms.ComboBox();
             this.tbox_Search = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.btn_Update = new System.Windows.Forms.Button();
+            this.btn_refresh = new System.Windows.Forms.Button();
+            this.picBox_Search = new System.Windows.Forms.PictureBox();
             this.pnl_prodDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV_prodList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Search)).BeginInit();
@@ -219,35 +221,6 @@
             this.dataGV_prodList.TabIndex = 23;
             this.dataGV_prodList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_prodList_CellContentClick);
             // 
-            // btn_refresh
-            // 
-            this.btn_refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_refresh.BackColor = System.Drawing.Color.Gainsboro;
-            this.btn_refresh.FlatAppearance.BorderSize = 0;
-            this.btn_refresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btn_refresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
-            this.btn_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_refresh.Font = new System.Drawing.Font("LuloCleanW01-One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_refresh.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Refresh_32px;
-            this.btn_refresh.Location = new System.Drawing.Point(605, 75);
-            this.btn_refresh.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.Size = new System.Drawing.Size(35, 35);
-            this.btn_refresh.TabIndex = 30;
-            this.btn_refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_refresh.UseVisualStyleBackColor = false;
-            // 
-            // picBox_Search
-            // 
-            this.picBox_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBox_Search.Image = ((System.Drawing.Image)(resources.GetObject("picBox_Search.Image")));
-            this.picBox_Search.Location = new System.Drawing.Point(645, 75);
-            this.picBox_Search.Name = "picBox_Search";
-            this.picBox_Search.Size = new System.Drawing.Size(32, 32);
-            this.picBox_Search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picBox_Search.TabIndex = 29;
-            this.picBox_Search.TabStop = false;
-            // 
             // cmbBox_filter
             // 
             this.cmbBox_filter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -282,11 +255,73 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Product Master List";
             // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.BackColor = System.Drawing.Color.IndianRed;
+            this.btn_Cancel.FlatAppearance.BorderSize = 0;
+            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cancel.Font = new System.Drawing.Font("LuloCleanW01-OneBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.ForeColor = System.Drawing.Color.Snow;
+            this.btn_Cancel.Location = new System.Drawing.Point(179, 560);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(166, 38);
+            this.btn_Cancel.TabIndex = 32;
+            this.btn_Cancel.Text = "CANCEL";
+            this.btn_Cancel.UseVisualStyleBackColor = false;
+            // 
+            // btn_Update
+            // 
+            this.btn_Update.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btn_Update.FlatAppearance.BorderSize = 0;
+            this.btn_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Update.Font = new System.Drawing.Font("LuloCleanW01-OneBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Update.ForeColor = System.Drawing.Color.Snow;
+            this.btn_Update.Location = new System.Drawing.Point(5, 560);
+            this.btn_Update.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(170, 38);
+            this.btn_Update.TabIndex = 31;
+            this.btn_Update.Text = "UPDATE";
+            this.btn_Update.UseVisualStyleBackColor = false;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_refresh.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_refresh.FlatAppearance.BorderSize = 0;
+            this.btn_refresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.btn_refresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.btn_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_refresh.Font = new System.Drawing.Font("LuloCleanW01-One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_refresh.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Refresh_32px;
+            this.btn_refresh.Location = new System.Drawing.Point(605, 75);
+            this.btn_refresh.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(35, 35);
+            this.btn_refresh.TabIndex = 30;
+            this.btn_refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_refresh.UseVisualStyleBackColor = false;
+            // 
+            // picBox_Search
+            // 
+            this.picBox_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picBox_Search.Image = ((System.Drawing.Image)(resources.GetObject("picBox_Search.Image")));
+            this.picBox_Search.Location = new System.Drawing.Point(645, 75);
+            this.picBox_Search.Name = "picBox_Search";
+            this.picBox_Search.Size = new System.Drawing.Size(32, 32);
+            this.picBox_Search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picBox_Search.TabIndex = 29;
+            this.picBox_Search.TabStop = false;
+            // 
             // productMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.btn_Cancel);
+            this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.picBox_Search);
@@ -332,5 +367,7 @@
         private System.Windows.Forms.ComboBox cmbBox_filter;
         private System.Windows.Forms.TextBox tbox_Search;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_Cancel;
+        private System.Windows.Forms.Button btn_Update;
     }
 }

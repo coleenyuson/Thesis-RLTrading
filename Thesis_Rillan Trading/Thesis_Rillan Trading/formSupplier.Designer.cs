@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.tbox_supplierAddress = new System.Windows.Forms.TextBox();
             this.lbl_address = new System.Windows.Forms.Label();
-            this.tbox_contactNum = new System.Windows.Forms.TextBox();
-            this.lbl_contactNum = new System.Windows.Forms.Label();
-            this.tbox_faxNum = new System.Windows.Forms.TextBox();
-            this.lbl_faxNum = new System.Windows.Forms.Label();
+            this.tbox_emailAddr = new System.Windows.Forms.TextBox();
+            this.lbl_emailAddr = new System.Windows.Forms.Label();
+            this.tbox_contactPerson = new System.Windows.Forms.TextBox();
+            this.lbl_contactPerson = new System.Windows.Forms.Label();
             this.tbox_supplierName = new System.Windows.Forms.TextBox();
             this.panel_supplierForm = new System.Windows.Forms.Panel();
             this.lbl_supplierName = new System.Windows.Forms.Label();
@@ -55,6 +55,10 @@
             this.btn_Logout = new System.Windows.Forms.Button();
             this.btn_Settings = new System.Windows.Forms.Button();
             this.pnl_Header = new System.Windows.Forms.Panel();
+            this.tbox_contactNum = new System.Windows.Forms.TextBox();
+            this.lbl_contactNum = new System.Windows.Forms.Label();
+            this.tbox_faxNum = new System.Windows.Forms.TextBox();
+            this.lbl_faxNum = new System.Windows.Forms.Label();
             this.panel_supplierForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV_supplier)).BeginInit();
             this.pnl_Footer.SuspendLayout();
@@ -64,7 +68,7 @@
             // 
             // tbox_supplierAddress
             // 
-            this.tbox_supplierAddress.Location = new System.Drawing.Point(18, 281);
+            this.tbox_supplierAddress.Location = new System.Drawing.Point(19, 119);
             this.tbox_supplierAddress.Margin = new System.Windows.Forms.Padding(2);
             this.tbox_supplierAddress.Multiline = true;
             this.tbox_supplierAddress.Name = "tbox_supplierAddress";
@@ -74,48 +78,48 @@
             // lbl_address
             // 
             this.lbl_address.AutoSize = true;
-            this.lbl_address.Location = new System.Drawing.Point(13, 253);
+            this.lbl_address.Location = new System.Drawing.Point(14, 91);
             this.lbl_address.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_address.Name = "lbl_address";
             this.lbl_address.Size = new System.Drawing.Size(62, 20);
             this.lbl_address.TabIndex = 8;
             this.lbl_address.Text = "Address";
             // 
-            // tbox_contactNum
+            // tbox_emailAddr
             // 
-            this.tbox_contactNum.Location = new System.Drawing.Point(17, 202);
-            this.tbox_contactNum.Margin = new System.Windows.Forms.Padding(2);
-            this.tbox_contactNum.Name = "tbox_contactNum";
-            this.tbox_contactNum.Size = new System.Drawing.Size(276, 27);
-            this.tbox_contactNum.TabIndex = 7;
+            this.tbox_emailAddr.Location = new System.Drawing.Point(18, 322);
+            this.tbox_emailAddr.Margin = new System.Windows.Forms.Padding(2);
+            this.tbox_emailAddr.Name = "tbox_emailAddr";
+            this.tbox_emailAddr.Size = new System.Drawing.Size(276, 27);
+            this.tbox_emailAddr.TabIndex = 7;
             // 
-            // lbl_contactNum
+            // lbl_emailAddr
             // 
-            this.lbl_contactNum.AutoSize = true;
-            this.lbl_contactNum.Location = new System.Drawing.Point(14, 176);
-            this.lbl_contactNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_contactNum.Name = "lbl_contactNum";
-            this.lbl_contactNum.Size = new System.Drawing.Size(118, 20);
-            this.lbl_contactNum.TabIndex = 6;
-            this.lbl_contactNum.Text = "Contact Number";
+            this.lbl_emailAddr.AutoSize = true;
+            this.lbl_emailAddr.Location = new System.Drawing.Point(15, 296);
+            this.lbl_emailAddr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_emailAddr.Name = "lbl_emailAddr";
+            this.lbl_emailAddr.Size = new System.Drawing.Size(103, 20);
+            this.lbl_emailAddr.TabIndex = 6;
+            this.lbl_emailAddr.Text = "Email Address";
             // 
-            // tbox_faxNum
+            // tbox_contactPerson
             // 
-            this.tbox_faxNum.Location = new System.Drawing.Point(16, 123);
-            this.tbox_faxNum.Margin = new System.Windows.Forms.Padding(2);
-            this.tbox_faxNum.Name = "tbox_faxNum";
-            this.tbox_faxNum.Size = new System.Drawing.Size(276, 27);
-            this.tbox_faxNum.TabIndex = 5;
+            this.tbox_contactPerson.Location = new System.Drawing.Point(18, 252);
+            this.tbox_contactPerson.Margin = new System.Windows.Forms.Padding(2);
+            this.tbox_contactPerson.Name = "tbox_contactPerson";
+            this.tbox_contactPerson.Size = new System.Drawing.Size(276, 27);
+            this.tbox_contactPerson.TabIndex = 5;
             // 
-            // lbl_faxNum
+            // lbl_contactPerson
             // 
-            this.lbl_faxNum.AutoSize = true;
-            this.lbl_faxNum.Location = new System.Drawing.Point(13, 96);
-            this.lbl_faxNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_faxNum.Name = "lbl_faxNum";
-            this.lbl_faxNum.Size = new System.Drawing.Size(88, 20);
-            this.lbl_faxNum.TabIndex = 4;
-            this.lbl_faxNum.Text = "Fax Number";
+            this.lbl_contactPerson.AutoSize = true;
+            this.lbl_contactPerson.Location = new System.Drawing.Point(15, 225);
+            this.lbl_contactPerson.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_contactPerson.Name = "lbl_contactPerson";
+            this.lbl_contactPerson.Size = new System.Drawing.Size(107, 20);
+            this.lbl_contactPerson.TabIndex = 4;
+            this.lbl_contactPerson.Text = "Contact Person";
             // 
             // tbox_supplierName
             // 
@@ -128,18 +132,22 @@
             // panel_supplierForm
             // 
             this.panel_supplierForm.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel_supplierForm.Controls.Add(this.tbox_supplierAddress);
-            this.panel_supplierForm.Controls.Add(this.lbl_address);
-            this.panel_supplierForm.Controls.Add(this.tbox_contactNum);
-            this.panel_supplierForm.Controls.Add(this.lbl_contactNum);
             this.panel_supplierForm.Controls.Add(this.tbox_faxNum);
             this.panel_supplierForm.Controls.Add(this.lbl_faxNum);
+            this.panel_supplierForm.Controls.Add(this.tbox_contactNum);
+            this.panel_supplierForm.Controls.Add(this.lbl_contactNum);
+            this.panel_supplierForm.Controls.Add(this.tbox_supplierAddress);
+            this.panel_supplierForm.Controls.Add(this.lbl_address);
+            this.panel_supplierForm.Controls.Add(this.tbox_emailAddr);
+            this.panel_supplierForm.Controls.Add(this.lbl_emailAddr);
+            this.panel_supplierForm.Controls.Add(this.tbox_contactPerson);
+            this.panel_supplierForm.Controls.Add(this.lbl_contactPerson);
             this.panel_supplierForm.Controls.Add(this.tbox_supplierName);
             this.panel_supplierForm.Controls.Add(this.lbl_supplierName);
             this.panel_supplierForm.Location = new System.Drawing.Point(10, 113);
             this.panel_supplierForm.Margin = new System.Windows.Forms.Padding(2);
             this.panel_supplierForm.Name = "panel_supplierForm";
-            this.panel_supplierForm.Size = new System.Drawing.Size(312, 408);
+            this.panel_supplierForm.Size = new System.Drawing.Size(312, 506);
             this.panel_supplierForm.TabIndex = 21;
             // 
             // lbl_supplierName
@@ -161,7 +169,7 @@
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("LuloCleanW01-OneBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.Snow;
-            this.btn_delete.Location = new System.Drawing.Point(168, 525);
+            this.btn_delete.Location = new System.Drawing.Point(168, 623);
             this.btn_delete.Margin = new System.Windows.Forms.Padding(2);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(154, 38);
@@ -178,7 +186,7 @@
             this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Save.Font = new System.Drawing.Font("LuloCleanW01-OneBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save.ForeColor = System.Drawing.Color.Snow;
-            this.btn_Save.Location = new System.Drawing.Point(10, 525);
+            this.btn_Save.Location = new System.Drawing.Point(10, 623);
             this.btn_Save.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(154, 38);
@@ -201,12 +209,13 @@
             // 
             this.dataGV_supplier.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGV_supplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGV_supplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGV_supplier.Location = new System.Drawing.Point(327, 113);
             this.dataGV_supplier.Name = "dataGV_supplier";
             this.dataGV_supplier.RowTemplate.Height = 24;
             this.dataGV_supplier.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV_supplier.Size = new System.Drawing.Size(767, 450);
+            this.dataGV_supplier.Size = new System.Drawing.Size(767, 548);
             this.dataGV_supplier.TabIndex = 32;
             // 
             // pnl_Footer
@@ -217,7 +226,7 @@
             this.pnl_Footer.Controls.Add(this.label3);
             this.pnl_Footer.Controls.Add(this.label1);
             this.pnl_Footer.Controls.Add(this.lbl_DateTime);
-            this.pnl_Footer.Location = new System.Drawing.Point(-3, 592);
+            this.pnl_Footer.Location = new System.Drawing.Point(-3, 677);
             this.pnl_Footer.Name = "pnl_Footer";
             this.pnl_Footer.Size = new System.Drawing.Size(1112, 30);
             this.pnl_Footer.TabIndex = 33;
@@ -373,12 +382,48 @@
             this.pnl_Header.Size = new System.Drawing.Size(1108, 53);
             this.pnl_Header.TabIndex = 20;
             // 
+            // tbox_contactNum
+            // 
+            this.tbox_contactNum.Location = new System.Drawing.Point(18, 391);
+            this.tbox_contactNum.Margin = new System.Windows.Forms.Padding(2);
+            this.tbox_contactNum.Name = "tbox_contactNum";
+            this.tbox_contactNum.Size = new System.Drawing.Size(276, 27);
+            this.tbox_contactNum.TabIndex = 11;
+            // 
+            // lbl_contactNum
+            // 
+            this.lbl_contactNum.AutoSize = true;
+            this.lbl_contactNum.Location = new System.Drawing.Point(15, 365);
+            this.lbl_contactNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_contactNum.Name = "lbl_contactNum";
+            this.lbl_contactNum.Size = new System.Drawing.Size(118, 20);
+            this.lbl_contactNum.TabIndex = 10;
+            this.lbl_contactNum.Text = "Contact Number";
+            // 
+            // tbox_faxNum
+            // 
+            this.tbox_faxNum.Location = new System.Drawing.Point(18, 462);
+            this.tbox_faxNum.Margin = new System.Windows.Forms.Padding(2);
+            this.tbox_faxNum.Name = "tbox_faxNum";
+            this.tbox_faxNum.Size = new System.Drawing.Size(276, 27);
+            this.tbox_faxNum.TabIndex = 13;
+            // 
+            // lbl_faxNum
+            // 
+            this.lbl_faxNum.AutoSize = true;
+            this.lbl_faxNum.Location = new System.Drawing.Point(15, 436);
+            this.lbl_faxNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_faxNum.Name = "lbl_faxNum";
+            this.lbl_faxNum.Size = new System.Drawing.Size(88, 20);
+            this.lbl_faxNum.TabIndex = 12;
+            this.lbl_faxNum.Text = "Fax Number";
+            // 
             // formSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1106, 621);
+            this.ClientSize = new System.Drawing.Size(1106, 706);
             this.ControlBox = false;
             this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.picBox_Search);
@@ -417,10 +462,10 @@
         #endregion
         private System.Windows.Forms.TextBox tbox_supplierAddress;
         private System.Windows.Forms.Label lbl_address;
-        private System.Windows.Forms.TextBox tbox_contactNum;
-        private System.Windows.Forms.Label lbl_contactNum;
-        private System.Windows.Forms.TextBox tbox_faxNum;
-        private System.Windows.Forms.Label lbl_faxNum;
+        private System.Windows.Forms.TextBox tbox_emailAddr;
+        private System.Windows.Forms.Label lbl_emailAddr;
+        private System.Windows.Forms.TextBox tbox_contactPerson;
+        private System.Windows.Forms.Label lbl_contactPerson;
         private System.Windows.Forms.TextBox tbox_supplierName;
         private System.Windows.Forms.Panel panel_supplierForm;
         private System.Windows.Forms.Label lbl_supplierName;
@@ -441,5 +486,9 @@
         private System.Windows.Forms.Button btn_Logout;
         private System.Windows.Forms.Button btn_Settings;
         private System.Windows.Forms.Panel pnl_Header;
+        private System.Windows.Forms.TextBox tbox_contactNum;
+        private System.Windows.Forms.Label lbl_contactNum;
+        private System.Windows.Forms.TextBox tbox_faxNum;
+        private System.Windows.Forms.Label lbl_faxNum;
     }
 }

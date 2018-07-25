@@ -103,6 +103,16 @@ namespace Thesis_Rillan_Trading.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Debt_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Debt_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Delivered_12px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Delivered_12px", resourceCulture);
@@ -156,6 +166,16 @@ namespace Thesis_Rillan_Trading.Properties {
         internal static System.Drawing.Bitmap icons8_Product_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Product_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Profile_32px_2 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Profile_32px_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

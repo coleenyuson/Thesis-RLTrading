@@ -23,6 +23,7 @@ namespace Thesis_Rillan_Trading
         public Form refEmployee { get; set; }
         public Form refSupplier { get; set; }
         public Form refInventory { get; set; }
+        public Form refCustomer { get; set; }
 
         public int ref_empID;
         
@@ -72,7 +73,10 @@ namespace Thesis_Rillan_Trading
 
         private void btn_Customer_Click(object sender, EventArgs e)
         {
-
+            formCustomerMgt fCustomer = new formCustomerMgt();
+            fCustomer.refAdmiHome = this;
+            fCustomer.Show();
+            this.Hide();
         }
 
         private void btn_Reports_Click(object sender, EventArgs e)

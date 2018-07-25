@@ -109,11 +109,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("LuloCleanW01-OneBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 27);
+            this.label5.Location = new System.Drawing.Point(35, 27);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(293, 23);
+            this.label5.Size = new System.Drawing.Size(230, 23);
             this.label5.TabIndex = 15;
-            this.label5.Text = "Employee Information";
+            this.label5.Text = "Employee Details";
             // 
             // rdbtn_sexFemale
             // 
@@ -350,7 +350,7 @@
             this.tbox_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbox_Search.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.tbox_Search.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.tbox_Search.Location = new System.Drawing.Point(875, 69);
+            this.tbox_Search.Location = new System.Drawing.Point(872, 69);
             this.tbox_Search.Margin = new System.Windows.Forms.Padding(2);
             this.tbox_Search.Name = "tbox_Search";
             this.tbox_Search.Size = new System.Drawing.Size(239, 27);
@@ -364,7 +364,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbBox_filter.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.cmbBox_filter.FormattingEnabled = true;
-            this.cmbBox_filter.Location = new System.Drawing.Point(1119, 69);
+            this.cmbBox_filter.Location = new System.Drawing.Point(1116, 69);
             this.cmbBox_filter.Name = "cmbBox_filter";
             this.cmbBox_filter.Size = new System.Drawing.Size(165, 28);
             this.cmbBox_filter.TabIndex = 17;
@@ -410,7 +410,7 @@
             this.dataGV_Emp.ReadOnly = true;
             this.dataGV_Emp.RowTemplate.Height = 24;
             this.dataGV_Emp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGV_Emp.Size = new System.Drawing.Size(959, 470);
+            this.dataGV_Emp.Size = new System.Drawing.Size(953, 470);
             this.dataGV_Emp.TabIndex = 22;
             this.dataGV_Emp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_Emp_CellContentClick);
             // 
@@ -426,7 +426,7 @@
             this.pnl_Header.Location = new System.Drawing.Point(-2, -2);
             this.pnl_Header.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_Header.Name = "pnl_Header";
-            this.pnl_Header.Size = new System.Drawing.Size(1303, 50);
+            this.pnl_Header.Size = new System.Drawing.Size(1310, 50);
             this.pnl_Header.TabIndex = 23;
             // 
             // btn_Back
@@ -456,7 +456,7 @@
             this.btn_Logout.ForeColor = System.Drawing.Color.Snow;
             this.btn_Logout.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Sign_Out_32px;
             this.btn_Logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Logout.Location = new System.Drawing.Point(1248, 4);
+            this.btn_Logout.Location = new System.Drawing.Point(1241, 4);
             this.btn_Logout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Logout.Name = "btn_Logout";
             this.btn_Logout.Size = new System.Drawing.Size(40, 40);
@@ -472,9 +472,9 @@
             this.pnl_Footer.Controls.Add(this.label3);
             this.pnl_Footer.Controls.Add(this.label1);
             this.pnl_Footer.Controls.Add(this.lbl_DateTime);
-            this.pnl_Footer.Location = new System.Drawing.Point(-2, 757);
+            this.pnl_Footer.Location = new System.Drawing.Point(-2, 753);
             this.pnl_Footer.Name = "pnl_Footer";
-            this.pnl_Footer.Size = new System.Drawing.Size(1303, 30);
+            this.pnl_Footer.Size = new System.Drawing.Size(1310, 30);
             this.pnl_Footer.TabIndex = 24;
             // 
             // label3
@@ -507,7 +507,7 @@
             this.lbl_DateTime.AutoSize = true;
             this.lbl_DateTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DateTime.ForeColor = System.Drawing.Color.White;
-            this.lbl_DateTime.Location = new System.Drawing.Point(1097, 5);
+            this.lbl_DateTime.Location = new System.Drawing.Point(1104, 5);
             this.lbl_DateTime.Name = "lbl_DateTime";
             this.lbl_DateTime.Size = new System.Drawing.Size(158, 20);
             this.lbl_DateTime.TabIndex = 3;
@@ -527,7 +527,7 @@
             this.pnl_userSettings.Controls.Add(this.cmbBox_Branch);
             this.pnl_userSettings.Location = new System.Drawing.Point(327, 581);
             this.pnl_userSettings.Name = "pnl_userSettings";
-            this.pnl_userSettings.Size = new System.Drawing.Size(958, 110);
+            this.pnl_userSettings.Size = new System.Drawing.Size(953, 110);
             this.pnl_userSettings.TabIndex = 25;
             // 
             // label6
@@ -551,7 +551,7 @@
             this.btn_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_refresh.Font = new System.Drawing.Font("LuloCleanW01-One", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_refresh.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Refresh_32px;
-            this.btn_refresh.Location = new System.Drawing.Point(795, 64);
+            this.btn_refresh.Location = new System.Drawing.Point(792, 64);
             this.btn_refresh.Margin = new System.Windows.Forms.Padding(2);
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.Size = new System.Drawing.Size(35, 35);
@@ -564,7 +564,7 @@
             // 
             this.picBox_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picBox_Search.Image = ((System.Drawing.Image)(resources.GetObject("picBox_Search.Image")));
-            this.picBox_Search.Location = new System.Drawing.Point(835, 64);
+            this.picBox_Search.Location = new System.Drawing.Point(832, 64);
             this.picBox_Search.Name = "picBox_Search";
             this.picBox_Search.Size = new System.Drawing.Size(32, 32);
             this.picBox_Search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -577,7 +577,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1289, 786);
+            this.ClientSize = new System.Drawing.Size(1292, 782);
             this.ControlBox = false;
             this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.pnl_userSettings);
