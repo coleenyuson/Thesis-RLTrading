@@ -35,12 +35,12 @@
             this.dtp_dateFrom = new System.Windows.Forms.DateTimePicker();
             this.dtp_dateTo = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGView_customerAccts = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_custStatus = new System.Windows.Forms.Label();
             this.btn_Status = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btn_search = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DGView_customerAccts)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -101,14 +101,16 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Date To";
             // 
-            // dataGridView1
+            // DGView_customerAccts
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 144);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1055, 442);
-            this.dataGridView1.TabIndex = 7;
+            this.DGView_customerAccts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGView_customerAccts.Location = new System.Drawing.Point(23, 144);
+            this.DGView_customerAccts.Name = "DGView_customerAccts";
+            this.DGView_customerAccts.RowTemplate.Height = 24;
+            this.DGView_customerAccts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGView_customerAccts.Size = new System.Drawing.Size(1055, 442);
+            this.DGView_customerAccts.TabIndex = 7;
+            this.DGView_customerAccts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGView_customerAccts_CellContentClick);
             // 
             // label5
             // 
@@ -129,6 +131,7 @@
             this.lbl_custStatus.Size = new System.Drawing.Size(160, 21);
             this.lbl_custStatus.TabIndex = 9;
             this.lbl_custStatus.Text = "DEACTIVATED";
+            this.lbl_custStatus.Click += new System.EventHandler(this.lbl_custStatus_Click);
             // 
             // btn_Status
             // 
@@ -142,19 +145,21 @@
             this.btn_Status.TabIndex = 10;
             this.btn_Status.Text = "Activate";
             this.btn_Status.UseVisualStyleBackColor = false;
+            this.btn_Status.Click += new System.EventHandler(this.btn_Status_Click);
             // 
-            // button1
+            // btn_search
             // 
-            this.button1.BackColor = System.Drawing.Color.CadetBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Snow;
-            this.button1.Location = new System.Drawing.Point(852, 106);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(226, 32);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_search.BackColor = System.Drawing.Color.CadetBlue;
+            this.btn_search.FlatAppearance.BorderSize = 0;
+            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_search.ForeColor = System.Drawing.Color.Snow;
+            this.btn_search.Location = new System.Drawing.Point(852, 106);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(226, 32);
+            this.btn_search.TabIndex = 11;
+            this.btn_search.Text = "Search";
+            this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // customerAccounts
             // 
@@ -162,11 +167,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_search);
             this.Controls.Add(this.btn_Status);
             this.Controls.Add(this.lbl_custStatus);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGView_customerAccts);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtp_dateTo);
             this.Controls.Add(this.dtp_dateFrom);
@@ -178,7 +183,8 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "customerAccounts";
             this.Size = new System.Drawing.Size(1097, 624);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.customerAccounts_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DGView_customerAccts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,10 +199,10 @@
         private System.Windows.Forms.DateTimePicker dtp_dateFrom;
         private System.Windows.Forms.DateTimePicker dtp_dateTo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGView_customerAccts;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl_custStatus;
         private System.Windows.Forms.Button btn_Status;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_search;
     }
 }
