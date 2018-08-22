@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace Thesis_Rillan_Trading
 {
-    public partial class customerAccounts : UserControl
+    public partial class userCon_customerAccounts : UserControl
     {
 
         //Variables
@@ -24,7 +24,7 @@ namespace Thesis_Rillan_Trading
         int salesOrderID, status;
 
 
-        public customerAccounts()
+        public userCon_customerAccounts()
         {
             conn = new MySqlConnection("Server=localhost; Database=rillan_trading; Uid=root; Pwd=root;");
             InitializeComponent();

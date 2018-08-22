@@ -16,7 +16,9 @@ namespace Thesis_Rillan_Trading
         public Form refHome { get; set; }
         public Form refLogin { get; set; }
         public Form refSettings { get; set; }
+        public Form refPO { get; set; }
 
+        public List<classItems> itemValues { get; set; }
 
         public formInventoryMgt()
         {
@@ -72,6 +74,14 @@ namespace Thesis_Rillan_Trading
             fEmp.Show();
             this.Close();
             
+        }
+
+        private void btn_purchaseOrder_Click(object sender, EventArgs e)
+        {
+            formPurchaseOrder fPO = new formPurchaseOrder();
+            fPO.refInventory = this;
+            fPO.Show();
+            this.Hide();
         }
     }
 }

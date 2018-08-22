@@ -82,7 +82,7 @@
             // 
             // panel_empInfo
             // 
-            this.panel_empInfo.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel_empInfo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel_empInfo.Controls.Add(this.label5);
             this.panel_empInfo.Controls.Add(this.rdbtn_sexFemale);
             this.panel_empInfo.Controls.Add(this.rdbtn_sexMale);
@@ -426,7 +426,7 @@
             this.pnl_Header.Location = new System.Drawing.Point(-2, -2);
             this.pnl_Header.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnl_Header.Name = "pnl_Header";
-            this.pnl_Header.Size = new System.Drawing.Size(1310, 50);
+            this.pnl_Header.Size = new System.Drawing.Size(1295, 50);
             this.pnl_Header.TabIndex = 23;
             // 
             // btn_Back
@@ -456,7 +456,7 @@
             this.btn_Logout.ForeColor = System.Drawing.Color.Snow;
             this.btn_Logout.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Sign_Out_32px;
             this.btn_Logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Logout.Location = new System.Drawing.Point(1241, 4);
+            this.btn_Logout.Location = new System.Drawing.Point(1250, 4);
             this.btn_Logout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Logout.Name = "btn_Logout";
             this.btn_Logout.Size = new System.Drawing.Size(40, 40);
@@ -544,7 +544,7 @@
             // btn_refresh
             // 
             this.btn_refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_refresh.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_refresh.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_refresh.FlatAppearance.BorderSize = 0;
             this.btn_refresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btn_refresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
@@ -576,8 +576,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1292, 782);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1284, 774);
             this.ControlBox = false;
             this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.pnl_userSettings);

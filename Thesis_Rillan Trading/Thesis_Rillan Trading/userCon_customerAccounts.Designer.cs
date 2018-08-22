@@ -1,6 +1,6 @@
 ﻿namespace Thesis_Rillan_Trading
 {
-    partial class customerAccounts
+    partial class userCon_customerAccounts
     {
         /// <summary> 
         /// Required designer variable.

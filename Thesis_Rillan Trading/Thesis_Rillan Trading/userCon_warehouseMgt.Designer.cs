@@ -1,6 +1,6 @@
 ﻿namespace Thesis_Rillan_Trading
 {
-    partial class warehouseMgt
+    partial class userCon_warehouseMgt
     {
         /// <summary> 
         /// Required designer variable.

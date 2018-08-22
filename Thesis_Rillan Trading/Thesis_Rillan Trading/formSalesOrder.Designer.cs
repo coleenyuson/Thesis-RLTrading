@@ -88,7 +88,6 @@
             this.DGView_items.RowTemplate.Height = 24;
             this.DGView_items.Size = new System.Drawing.Size(1057, 568);
             this.DGView_items.TabIndex = 0;
-            this.DGView_items.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGView_items_CellContentClick);
             // 
             // cmbox_paymentMode
             // 
