@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace Thesis_Rillan_Trading
 {
-    public partial class customerProfile : UserControl
+    public partial class userCon_customerProfile : UserControl
     {
 
         public MySqlConnection conn;
@@ -22,7 +22,7 @@ namespace Thesis_Rillan_Trading
         string query, name, contactPerson, address, contactNum, faxNum;
         int cust_id;
 
-        public customerProfile()
+        public userCon_customerProfile()
         {
             conn = new MySqlConnection("Server=localhost; Database=rillan_trading; Uid=root; Pwd=root;");
             InitializeComponent();

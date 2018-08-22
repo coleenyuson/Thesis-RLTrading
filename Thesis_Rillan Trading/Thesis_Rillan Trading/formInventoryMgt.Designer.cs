@@ -34,9 +34,8 @@
             this.btn_Settings = new System.Windows.Forms.Button();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.pnl_window = new System.Windows.Forms.Panel();
-            this.userControl_invHome = new Thesis_Rillan_Trading.inventoryHome();
-            this.userControl_prodList = new Thesis_Rillan_Trading.productMgt();
             this.pnl_sideMenu = new System.Windows.Forms.Panel();
+            this.btn_purchaseOrder = new System.Windows.Forms.Button();
             this.btn_dashboard = new System.Windows.Forms.Button();
             this.btn_productMgt = new System.Windows.Forms.Button();
             this.btn_storeMgt = new System.Windows.Forms.Button();
@@ -47,6 +46,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_DateTime = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.userControl_invHome = new Thesis_Rillan_Trading.userCon_inventoryHome();
+            this.userControl_prodList = new Thesis_Rillan_Trading.userCon_productMgt();
             this.pnl_Header.SuspendLayout();
             this.pnl_window.SuspendLayout();
             this.pnl_sideMenu.SuspendLayout();
@@ -119,31 +120,10 @@
             this.pnl_window.Size = new System.Drawing.Size(1097, 624);
             this.pnl_window.TabIndex = 22;
             // 
-            // userControl_invHome
-            // 
-            this.userControl_invHome.BackColor = System.Drawing.SystemColors.Control;
-            this.userControl_invHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_invHome.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.userControl_invHome.Location = new System.Drawing.Point(0, 0);
-            this.userControl_invHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.userControl_invHome.Name = "userControl_invHome";
-            this.userControl_invHome.Size = new System.Drawing.Size(1097, 624);
-            this.userControl_invHome.TabIndex = 1;
-            // 
-            // userControl_prodList
-            // 
-            this.userControl_prodList.BackColor = System.Drawing.Color.Gainsboro;
-            this.userControl_prodList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_prodList.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.userControl_prodList.Location = new System.Drawing.Point(0, 0);
-            this.userControl_prodList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.userControl_prodList.Name = "userControl_prodList";
-            this.userControl_prodList.Size = new System.Drawing.Size(1097, 624);
-            this.userControl_prodList.TabIndex = 0;
-            // 
             // pnl_sideMenu
             // 
             this.pnl_sideMenu.BackColor = System.Drawing.Color.CadetBlue;
+            this.pnl_sideMenu.Controls.Add(this.btn_purchaseOrder);
             this.pnl_sideMenu.Controls.Add(this.btn_dashboard);
             this.pnl_sideMenu.Controls.Add(this.btn_productMgt);
             this.pnl_sideMenu.Controls.Add(this.btn_storeMgt);
@@ -153,6 +133,24 @@
             this.pnl_sideMenu.Name = "pnl_sideMenu";
             this.pnl_sideMenu.Size = new System.Drawing.Size(267, 624);
             this.pnl_sideMenu.TabIndex = 7;
+            // 
+            // btn_purchaseOrder
+            // 
+            this.btn_purchaseOrder.FlatAppearance.BorderSize = 0;
+            this.btn_purchaseOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_purchaseOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btn_purchaseOrder.ForeColor = System.Drawing.Color.Snow;
+            this.btn_purchaseOrder.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Purchase_Order_32px;
+            this.btn_purchaseOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_purchaseOrder.Location = new System.Drawing.Point(2, 177);
+            this.btn_purchaseOrder.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_purchaseOrder.Name = "btn_purchaseOrder";
+            this.btn_purchaseOrder.Size = new System.Drawing.Size(265, 43);
+            this.btn_purchaseOrder.TabIndex = 7;
+            this.btn_purchaseOrder.Text = "             Purchase Order";
+            this.btn_purchaseOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_purchaseOrder.UseVisualStyleBackColor = true;
+            this.btn_purchaseOrder.Click += new System.EventHandler(this.btn_purchaseOrder_Click);
             // 
             // btn_dashboard
             // 
@@ -180,7 +178,7 @@
             this.btn_productMgt.ForeColor = System.Drawing.Color.Snow;
             this.btn_productMgt.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Product_32px;
             this.btn_productMgt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_productMgt.Location = new System.Drawing.Point(2, 184);
+            this.btn_productMgt.Location = new System.Drawing.Point(2, 236);
             this.btn_productMgt.Margin = new System.Windows.Forms.Padding(2);
             this.btn_productMgt.Name = "btn_productMgt";
             this.btn_productMgt.Size = new System.Drawing.Size(265, 43);
@@ -198,7 +196,7 @@
             this.btn_storeMgt.ForeColor = System.Drawing.Color.Snow;
             this.btn_storeMgt.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Shop_32px;
             this.btn_storeMgt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_storeMgt.Location = new System.Drawing.Point(2, 316);
+            this.btn_storeMgt.Location = new System.Drawing.Point(2, 368);
             this.btn_storeMgt.Margin = new System.Windows.Forms.Padding(2);
             this.btn_storeMgt.Name = "btn_storeMgt";
             this.btn_storeMgt.Size = new System.Drawing.Size(265, 43);
@@ -215,7 +213,7 @@
             this.btn_whseMgt.ForeColor = System.Drawing.Color.Snow;
             this.btn_whseMgt.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Warehouse_32px;
             this.btn_whseMgt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_whseMgt.Location = new System.Drawing.Point(2, 250);
+            this.btn_whseMgt.Location = new System.Drawing.Point(2, 302);
             this.btn_whseMgt.Margin = new System.Windows.Forms.Padding(2);
             this.btn_whseMgt.Name = "btn_whseMgt";
             this.btn_whseMgt.Size = new System.Drawing.Size(265, 43);
@@ -291,6 +289,28 @@
             this.lbl_DateTime.TabIndex = 3;
             this.lbl_DateTime.Text = "hh:mm January 1, 2018";
             // 
+            // userControl_invHome
+            // 
+            this.userControl_invHome.BackColor = System.Drawing.SystemColors.Control;
+            this.userControl_invHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_invHome.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.userControl_invHome.Location = new System.Drawing.Point(0, 0);
+            this.userControl_invHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.userControl_invHome.Name = "userControl_invHome";
+            this.userControl_invHome.Size = new System.Drawing.Size(1097, 624);
+            this.userControl_invHome.TabIndex = 1;
+            // 
+            // userControl_prodList
+            // 
+            this.userControl_prodList.BackColor = System.Drawing.Color.Gainsboro;
+            this.userControl_prodList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_prodList.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.userControl_prodList.Location = new System.Drawing.Point(0, 0);
+            this.userControl_prodList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.userControl_prodList.Name = "userControl_prodList";
+            this.userControl_prodList.Size = new System.Drawing.Size(1097, 624);
+            this.userControl_prodList.TabIndex = 0;
+            // 
             // formInventoryMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -335,8 +355,9 @@
         private System.Windows.Forms.Label lbl_DateTime;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer;
-        private productMgt userControl_prodList;
-        private inventoryHome userControl_invHome;
+        private userCon_productMgt userControl_prodList;
+        private userCon_inventoryHome userControl_invHome;
         private System.Windows.Forms.Button btn_dashboard;
+        private System.Windows.Forms.Button btn_purchaseOrder;
     }
 }

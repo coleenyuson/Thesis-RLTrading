@@ -183,6 +183,16 @@ namespace Thesis_Rillan_Trading.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Purchase_Order_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Purchase_Order_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Ratings_100px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Ratings_100px", resourceCulture);
@@ -246,6 +256,36 @@ namespace Thesis_Rillan_Trading.Properties {
         internal static System.Drawing.Bitmap icons8_Sign_Out_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Sign_Out_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_View_More_10px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_View_More_10px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_View_More_10px_black {
+            get {
+                object obj = ResourceManager.GetObject("icons8_View_More_10px_black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_View_More_20px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_View_More_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

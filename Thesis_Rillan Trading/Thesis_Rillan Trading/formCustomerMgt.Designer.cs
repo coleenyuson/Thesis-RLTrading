@@ -41,8 +41,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_DateTime = new System.Windows.Forms.Label();
             this.pnl_window = new System.Windows.Forms.Panel();
-            this.userControl_custAccounts = new Thesis_Rillan_Trading.customerAccounts();
-            this.userControl_custProfs = new Thesis_Rillan_Trading.customerProfile();
+            this.userControl_custAccounts = new Thesis_Rillan_Trading.userCon_customerAccounts();
+            this.userControl_custProfs = new Thesis_Rillan_Trading.userCon_customerProfile();
             this.pnl_Header.SuspendLayout();
             this.pnl_sideMenu.SuspendLayout();
             this.pnl_Footer.SuspendLayout();
@@ -297,9 +297,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_DateTime;
         private System.Windows.Forms.Button btn_custProfiles;
-        private customerProfile userControl_custProfiles;
+        private userCon_customerProfile userControl_custProfiles;
         private System.Windows.Forms.Panel pnl_window;
-        private customerAccounts userControl_custAccounts;
-        private customerProfile userControl_custProfs;
+        private userCon_customerAccounts userControl_custAccounts;
+        private userCon_customerProfile userControl_custProfs;
     }
 }

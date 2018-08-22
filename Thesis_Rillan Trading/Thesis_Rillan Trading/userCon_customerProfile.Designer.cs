@@ -1,6 +1,6 @@
 ﻿namespace Thesis_Rillan_Trading
 {
-    partial class customerProfile
+    partial class userCon_customerProfile
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(customerProfile));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(userCon_customerProfile));
             this.cmbBox_filter = new System.Windows.Forms.ComboBox();
             this.tbox_Search = new System.Windows.Forms.TextBox();
             this.dataGV_custProfiles = new System.Windows.Forms.DataGridView();

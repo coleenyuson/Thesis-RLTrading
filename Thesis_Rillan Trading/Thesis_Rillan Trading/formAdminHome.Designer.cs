@@ -48,7 +48,7 @@
             // 
             // pnl_Footer
             // 
-            this.pnl_Footer.BackColor = System.Drawing.Color.Teal;
+            this.pnl_Footer.BackColor = System.Drawing.Color.CadetBlue;
             this.pnl_Footer.Controls.Add(this.lbl_Role);
             this.pnl_Footer.Controls.Add(this.lbl_DateTime);
             this.pnl_Footer.Location = new System.Drawing.Point(-8, 289);
@@ -82,7 +82,7 @@
             // 
             // pnl_Header
             // 
-            this.pnl_Header.BackColor = System.Drawing.Color.Teal;
+            this.pnl_Header.BackColor = System.Drawing.Color.CadetBlue;
             this.pnl_Header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Header.Controls.Add(this.btn_Settings);
             this.pnl_Header.Controls.Add(this.btn_Logout);
@@ -227,8 +227,8 @@
             // formAdminHome
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(798, 322);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(794, 318);
             this.ControlBox = false;
             this.Controls.Add(this.btn_Supplier);
             this.Controls.Add(this.pnl_Header);

@@ -42,7 +42,7 @@
             // 
             // tbox_Username
             // 
-            this.tbox_Username.BackColor = System.Drawing.Color.Snow;
+            this.tbox_Username.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbox_Username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbox_Username.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.tbox_Username.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -56,7 +56,7 @@
             // 
             // tbox_Password
             // 
-            this.tbox_Password.BackColor = System.Drawing.Color.Snow;
+            this.tbox_Password.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbox_Password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbox_Password.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbox_Password.ForeColor = System.Drawing.Color.Teal;
@@ -135,7 +135,7 @@
             this.AcceptButton = this.btn_Login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(506, 257);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl_password);

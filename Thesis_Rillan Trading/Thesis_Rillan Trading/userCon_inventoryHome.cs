@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Thesis_Rillan_Trading
 {
-    public partial class warehouseMgt : UserControl
+    public partial class userCon_inventoryHome : UserControl
     {
-        public warehouseMgt()
+        public userCon_inventoryHome()
         {
             InitializeComponent();
+        }
+
+        private void inventoryHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
