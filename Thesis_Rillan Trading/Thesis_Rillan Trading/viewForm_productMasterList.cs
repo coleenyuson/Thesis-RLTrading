@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace Thesis_Rillan_Trading
 {
-    public partial class viewForm_PO_items : Form
+    public partial class viewForm_items : Form
     {
         // Variables
         public MySqlConnection conn;
@@ -23,7 +23,7 @@ namespace Thesis_Rillan_Trading
 
         public Form refPO { get; set; }
 
-        public viewForm_PO_items()
+        public viewForm_items()
         {
             InitializeComponent();
             conn = new MySqlConnection("Server=localhost; Database=rillan_trading; Uid=root; Pwd=root;");

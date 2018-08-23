@@ -89,9 +89,6 @@ namespace Thesis_Rillan_Trading
         }
 
        
-
-   
-        
         private void reset()
         {
             btn_search.Visible = false;

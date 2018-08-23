@@ -24,6 +24,7 @@ namespace Thesis_Rillan_Trading
         public Form refSupplier { get; set; }
         public Form refInventory { get; set; }
         public Form refCustomer { get; set; }
+        public Form refSales { get; set; }
 
         public int ref_empID;
         
@@ -52,7 +53,10 @@ namespace Thesis_Rillan_Trading
         //- - - Menu Buttons - - - 
         private void btn_Sales_Click(object sender, EventArgs e)
         {
-
+            formSalesMgt fSales = new formSalesMgt();
+            fSales.refAdminHome = this;
+            fSales.Show();
+            this.Hide();
         }
 
         private void btn_Inventory_Click(object sender, EventArgs e)

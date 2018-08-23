@@ -36,16 +36,16 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.pnl_Header = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_Settings = new System.Windows.Forms.Button();
-            this.btn_Logout = new System.Windows.Forms.Button();
             this.pnl_sideMenu = new System.Windows.Forms.Panel();
             this.pnl_window = new System.Windows.Forms.Panel();
-            this.btn_suppMasterList = new System.Windows.Forms.Button();
-            this.btn_suppItemList = new System.Windows.Forms.Button();
-            this.btn_back = new System.Windows.Forms.Button();
             this.pnl_windowPane = new System.Windows.Forms.Panel();
             this.userCon_suppProfiles = new Thesis_Rillan_Trading.userCon_supplierProfiles();
             this.userCon_suppItem = new Thesis_Rillan_Trading.userCon_supplierItem();
+            this.btn_suppMasterList = new System.Windows.Forms.Button();
+            this.btn_suppItemList = new System.Windows.Forms.Button();
+            this.btn_back = new System.Windows.Forms.Button();
+            this.btn_Settings = new System.Windows.Forms.Button();
+            this.btn_Logout = new System.Windows.Forms.Button();
             this.pnl_Footer.SuspendLayout();
             this.pnl_Header.SuspendLayout();
             this.pnl_sideMenu.SuspendLayout();
@@ -128,35 +128,6 @@
             this.label2.TabIndex = 35;
             this.label2.Text = "Supplier Management";
             // 
-            // btn_Settings
-            // 
-            this.btn_Settings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Settings.FlatAppearance.BorderSize = 0;
-            this.btn_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Settings.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Settings_32px;
-            this.btn_Settings.Location = new System.Drawing.Point(1264, 7);
-            this.btn_Settings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_Settings.Name = "btn_Settings";
-            this.btn_Settings.Size = new System.Drawing.Size(40, 40);
-            this.btn_Settings.TabIndex = 6;
-            this.btn_Settings.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Settings.UseVisualStyleBackColor = true;
-            this.btn_Settings.Click += new System.EventHandler(this.btn_Settings_Click);
-            // 
-            // btn_Logout
-            // 
-            this.btn_Logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Logout.FlatAppearance.BorderSize = 0;
-            this.btn_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Logout.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Sign_Out_32px;
-            this.btn_Logout.Location = new System.Drawing.Point(1310, 5);
-            this.btn_Logout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_Logout.Name = "btn_Logout";
-            this.btn_Logout.Size = new System.Drawing.Size(40, 40);
-            this.btn_Logout.TabIndex = 5;
-            this.btn_Logout.UseVisualStyleBackColor = true;
-            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
-            // 
             // pnl_sideMenu
             // 
             this.pnl_sideMenu.BackColor = System.Drawing.Color.CadetBlue;
@@ -175,60 +146,6 @@
             this.pnl_window.Name = "pnl_window";
             this.pnl_window.Size = new System.Drawing.Size(1099, 624);
             this.pnl_window.TabIndex = 35;
-            // 
-            // btn_suppMasterList
-            // 
-            this.btn_suppMasterList.FlatAppearance.BorderSize = 0;
-            this.btn_suppMasterList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_suppMasterList.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btn_suppMasterList.ForeColor = System.Drawing.Color.Snow;
-            this.btn_suppMasterList.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Product_32px;
-            this.btn_suppMasterList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_suppMasterList.Location = new System.Drawing.Point(2, 115);
-            this.btn_suppMasterList.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_suppMasterList.Name = "btn_suppMasterList";
-            this.btn_suppMasterList.Size = new System.Drawing.Size(265, 43);
-            this.btn_suppMasterList.TabIndex = 5;
-            this.btn_suppMasterList.Text = "             Supplier Master List";
-            this.btn_suppMasterList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_suppMasterList.UseVisualStyleBackColor = true;
-            this.btn_suppMasterList.Click += new System.EventHandler(this.btn_suppMasterList_Click);
-            // 
-            // btn_suppItemList
-            // 
-            this.btn_suppItemList.FlatAppearance.BorderSize = 0;
-            this.btn_suppItemList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_suppItemList.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btn_suppItemList.ForeColor = System.Drawing.Color.Snow;
-            this.btn_suppItemList.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Warehouse_32px;
-            this.btn_suppItemList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_suppItemList.Location = new System.Drawing.Point(2, 181);
-            this.btn_suppItemList.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_suppItemList.Name = "btn_suppItemList";
-            this.btn_suppItemList.Size = new System.Drawing.Size(265, 43);
-            this.btn_suppItemList.TabIndex = 3;
-            this.btn_suppItemList.Text = "             Supplier-Item List";
-            this.btn_suppItemList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_suppItemList.UseVisualStyleBackColor = true;
-            this.btn_suppItemList.Click += new System.EventHandler(this.btn_suppItemList_Click);
-            // 
-            // btn_back
-            // 
-            this.btn_back.FlatAppearance.BorderSize = 0;
-            this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_back.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btn_back.ForeColor = System.Drawing.Color.Snow;
-            this.btn_back.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Home_32px_1;
-            this.btn_back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_back.Location = new System.Drawing.Point(2, 53);
-            this.btn_back.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(265, 43);
-            this.btn_back.TabIndex = 2;
-            this.btn_back.Text = "             Back to Main Menu";
-            this.btn_back.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_back.UseVisualStyleBackColor = true;
-            this.btn_back.Click += new System.EventHandler(this.btn_back_Click_1);
             // 
             // pnl_windowPane
             // 
@@ -264,12 +181,95 @@
             this.userCon_suppItem.Size = new System.Drawing.Size(1099, 627);
             this.userCon_suppItem.TabIndex = 0;
             // 
+            // btn_suppMasterList
+            // 
+            this.btn_suppMasterList.FlatAppearance.BorderSize = 0;
+            this.btn_suppMasterList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_suppMasterList.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btn_suppMasterList.ForeColor = System.Drawing.Color.Snow;
+            this.btn_suppMasterList.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Contact_Details_32px;
+            this.btn_suppMasterList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_suppMasterList.Location = new System.Drawing.Point(2, 115);
+            this.btn_suppMasterList.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_suppMasterList.Name = "btn_suppMasterList";
+            this.btn_suppMasterList.Size = new System.Drawing.Size(265, 43);
+            this.btn_suppMasterList.TabIndex = 5;
+            this.btn_suppMasterList.Text = "             Supplier Master List";
+            this.btn_suppMasterList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_suppMasterList.UseVisualStyleBackColor = true;
+            this.btn_suppMasterList.Click += new System.EventHandler(this.btn_suppMasterList_Click);
+            // 
+            // btn_suppItemList
+            // 
+            this.btn_suppItemList.FlatAppearance.BorderSize = 0;
+            this.btn_suppItemList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_suppItemList.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btn_suppItemList.ForeColor = System.Drawing.Color.Snow;
+            this.btn_suppItemList.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Reseller_32px;
+            this.btn_suppItemList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_suppItemList.Location = new System.Drawing.Point(2, 181);
+            this.btn_suppItemList.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_suppItemList.Name = "btn_suppItemList";
+            this.btn_suppItemList.Size = new System.Drawing.Size(265, 43);
+            this.btn_suppItemList.TabIndex = 3;
+            this.btn_suppItemList.Text = "             Product Assignment";
+            this.btn_suppItemList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_suppItemList.UseVisualStyleBackColor = true;
+            this.btn_suppItemList.Click += new System.EventHandler(this.btn_suppItemList_Click);
+            // 
+            // btn_back
+            // 
+            this.btn_back.FlatAppearance.BorderSize = 0;
+            this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_back.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btn_back.ForeColor = System.Drawing.Color.Snow;
+            this.btn_back.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Back_32px;
+            this.btn_back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_back.Location = new System.Drawing.Point(2, 53);
+            this.btn_back.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(265, 43);
+            this.btn_back.TabIndex = 2;
+            this.btn_back.Text = "             Back ";
+            this.btn_back.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click_1);
+            // 
+            // btn_Settings
+            // 
+            this.btn_Settings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Settings.FlatAppearance.BorderSize = 0;
+            this.btn_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Settings.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Settings_32px;
+            this.btn_Settings.Location = new System.Drawing.Point(1264, 7);
+            this.btn_Settings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Settings.Name = "btn_Settings";
+            this.btn_Settings.Size = new System.Drawing.Size(40, 40);
+            this.btn_Settings.TabIndex = 6;
+            this.btn_Settings.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Settings.UseVisualStyleBackColor = true;
+            this.btn_Settings.Click += new System.EventHandler(this.btn_Settings_Click);
+            // 
+            // btn_Logout
+            // 
+            this.btn_Logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Logout.FlatAppearance.BorderSize = 0;
+            this.btn_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Logout.Image = global::Thesis_Rillan_Trading.Properties.Resources.icons8_Sign_Out_32px;
+            this.btn_Logout.Location = new System.Drawing.Point(1310, 5);
+            this.btn_Logout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.Size = new System.Drawing.Size(40, 40);
+            this.btn_Logout.TabIndex = 5;
+            this.btn_Logout.UseVisualStyleBackColor = true;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
+            // 
             // formSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1358, 712);
+            this.ClientSize = new System.Drawing.Size(1354, 708);
             this.ControlBox = false;
             this.Controls.Add(this.pnl_windowPane);
             this.Controls.Add(this.pnl_sideMenu);

@@ -73,9 +73,29 @@ namespace Thesis_Rillan_Trading.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Bill_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Bill_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Cash_in_Hand_100px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Cash_in_Hand_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Contact_Details_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Contact_Details_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,6 +213,16 @@ namespace Thesis_Rillan_Trading.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Purchase_Order_32px1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Purchase_Order_32px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Ratings_100px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Ratings_100px", resourceCulture);
@@ -206,6 +236,16 @@ namespace Thesis_Rillan_Trading.Properties {
         internal static System.Drawing.Bitmap icons8_Refresh_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Refresh_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Reseller_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Reseller_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

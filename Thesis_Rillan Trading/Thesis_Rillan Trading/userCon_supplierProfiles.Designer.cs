@@ -100,6 +100,8 @@
             // 
             // dataGV_supplier
             // 
+            this.dataGV_supplier.AllowUserToAddRows = false;
+            this.dataGV_supplier.AllowUserToDeleteRows = false;
             this.dataGV_supplier.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGV_supplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -107,6 +109,8 @@
             this.dataGV_supplier.Location = new System.Drawing.Point(323, 76);
             this.dataGV_supplier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGV_supplier.Name = "dataGV_supplier";
+            this.dataGV_supplier.ReadOnly = true;
+            this.dataGV_supplier.RowHeadersVisible = false;
             this.dataGV_supplier.RowTemplate.Height = 24;
             this.dataGV_supplier.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGV_supplier.Size = new System.Drawing.Size(767, 536);
@@ -312,7 +316,7 @@
             this.label2.TabIndex = 44;
             this.label2.Text = "Supplier Profiles";
             // 
-            // supplierProfiles
+            // userCon_supplierProfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -328,7 +332,7 @@
             this.Controls.Add(this.panel_supplierForm);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "supplierProfiles";
+            this.Name = "userCon_supplierProfiles";
             this.Size = new System.Drawing.Size(1097, 627);
             this.Load += new System.EventHandler(this.supplierProfiles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Search)).EndInit();

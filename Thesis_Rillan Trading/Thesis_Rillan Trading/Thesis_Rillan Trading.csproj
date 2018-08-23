@@ -54,11 +54,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classItems.cs" />
+    <Compile Include="viewFormPOList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewFormPOList.Designer.cs">
+      <DependentUpon>viewFormPOList.cs</DependentUpon>
+    </Compile>
     <Compile Include="formPurchaseOrder.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formPurchaseOrder.Designer.cs">
       <DependentUpon>formPurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formSalesOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formSalesOrder.Designer.cs">
+      <DependentUpon>formSalesOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formWarehouseMgt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formWarehouseMgt.Designer.cs">
+      <DependentUpon>formWarehouseMgt.cs</DependentUpon>
     </Compile>
     <Compile Include="userCon_customerAccounts.cs">
       <SubType>UserControl</SubType>
@@ -108,11 +126,11 @@
     <Compile Include="formLogin.Designer.cs">
       <DependentUpon>formLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="formSalesOrder.cs">
+    <Compile Include="formSalesMgt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formSalesOrder.Designer.cs">
-      <DependentUpon>formSalesOrder.cs</DependentUpon>
+    <Compile Include="formSalesMgt.Designer.cs">
+      <DependentUpon>formSalesMgt.cs</DependentUpon>
     </Compile>
     <Compile Include="formSupplier.cs">
       <SubType>Form</SubType>
@@ -134,12 +152,6 @@
     <Compile Include="userCon_productMgt.Designer.cs">
       <DependentUpon>userCon_productMgt.cs</DependentUpon>
     </Compile>
-    <Compile Include="userCon_purchaseOrder.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="userCon_purchaseOrder.Designer.cs">
-      <DependentUpon>userCon_purchaseOrder.cs</DependentUpon>
-    </Compile>
     <Compile Include="userCon_supplierItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,11 +164,17 @@
     <Compile Include="userCon_supplierProfiles.Designer.cs">
       <DependentUpon>userCon_supplierProfiles.cs</DependentUpon>
     </Compile>
-    <Compile Include="viewForm_PO_items.cs">
+    <Compile Include="viewFormSOList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="viewForm_PO_items.Designer.cs">
-      <DependentUpon>viewForm_PO_items.cs</DependentUpon>
+    <Compile Include="viewFormSOList.Designer.cs">
+      <DependentUpon>viewFormSOList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewForm_productMasterList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewForm_productMasterList.Designer.cs">
+      <DependentUpon>viewForm_productMasterList.cs</DependentUpon>
     </Compile>
     <Compile Include="userCon_warehouseMgt.cs">
       <SubType>UserControl</SubType>
@@ -164,8 +182,17 @@
     <Compile Include="userCon_warehouseMgt.Designer.cs">
       <DependentUpon>userCon_warehouseMgt.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="viewFormPOList.resx">
+      <DependentUpon>viewFormPOList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formPurchaseOrder.resx">
       <DependentUpon>formPurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formSalesOrder.resx">
+      <DependentUpon>formSalesOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formWarehouseMgt.resx">
+      <DependentUpon>formWarehouseMgt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userCon_customerAccounts.resx">
       <DependentUpon>userCon_customerAccounts.cs</DependentUpon>
@@ -191,8 +218,8 @@
     <EmbeddedResource Include="formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formSalesOrder.resx">
-      <DependentUpon>formSalesOrder.cs</DependentUpon>
+    <EmbeddedResource Include="formSalesMgt.resx">
+      <DependentUpon>formSalesMgt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formSupplier.resx">
       <DependentUpon>formSupplier.cs</DependentUpon>
@@ -208,17 +235,17 @@
     <EmbeddedResource Include="userCon_productMgt.resx">
       <DependentUpon>userCon_productMgt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="userCon_purchaseOrder.resx">
-      <DependentUpon>userCon_purchaseOrder.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="userCon_supplierItem.resx">
       <DependentUpon>userCon_supplierItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userCon_supplierProfiles.resx">
       <DependentUpon>userCon_supplierProfiles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="viewForm_PO_items.resx">
-      <DependentUpon>viewForm_PO_items.cs</DependentUpon>
+    <EmbeddedResource Include="viewFormSOList.resx">
+      <DependentUpon>viewFormSOList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewForm_productMasterList.resx">
+      <DependentUpon>viewForm_productMasterList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userCon_warehouseMgt.resx">
       <DependentUpon>userCon_warehouseMgt.cs</DependentUpon>
@@ -318,6 +345,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_View_More_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Bill_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Purchase_Order_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Reseller_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Contact_Details_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

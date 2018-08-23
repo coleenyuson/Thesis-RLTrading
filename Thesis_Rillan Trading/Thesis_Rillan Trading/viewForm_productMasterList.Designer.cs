@@ -1,6 +1,6 @@
 ﻿namespace Thesis_Rillan_Trading
 {
-    partial class viewForm_PO_items
+    partial class viewForm_items
     {
         /// <summary>
         /// Required designer variable.
@@ -179,7 +179,7 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // viewForm_PO_items
+            // viewForm_items
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -196,11 +196,11 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "viewForm_PO_items";
+            this.Name = "viewForm_items";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Purchase Order - Items";
+            this.Text = "Product Master List";
             this.Load += new System.EventHandler(this.viewForm_PO_items_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_items)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

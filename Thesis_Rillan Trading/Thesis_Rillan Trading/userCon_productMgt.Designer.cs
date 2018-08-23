@@ -311,11 +311,11 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 28);
+            this.label1.Size = new System.Drawing.Size(215, 28);
             this.label1.TabIndex = 47;
-            this.label1.Text = "Product Master List";
+            this.label1.Text = "Product Management";
             // 
-            // productMgt
+            // userCon_productMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -333,7 +333,7 @@
             this.Controls.Add(this.pnl_prodDetails);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "productMgt";
+            this.Name = "userCon_productMgt";
             this.Size = new System.Drawing.Size(1097, 624);
             this.Load += new System.EventHandler(this.productMgt_Load);
             this.pnl_prodDetails.ResumeLayout(false);

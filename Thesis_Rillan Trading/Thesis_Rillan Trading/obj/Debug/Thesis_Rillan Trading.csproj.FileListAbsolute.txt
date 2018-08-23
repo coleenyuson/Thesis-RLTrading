@@ -57,9 +57,12 @@ D:\Program Files\GitHub\Thesis-RLTrading\Thesis_Rillan Trading\Thesis_Rillan Tra
 D:\Program Files\GitHub\Thesis-RLTrading\Thesis_Rillan Trading\Thesis_Rillan Trading\obj\Debug\Thesis_Rillan_Trading.userCon_customerProfile.resources
 D:\Program Files\GitHub\Thesis-RLTrading\Thesis_Rillan Trading\Thesis_Rillan Trading\obj\Debug\Thesis_Rillan_Trading.userCon_inventoryHome.resources
 D:\Program Files\GitHub\Thesis-RLTrading\Thesis_Rillan Trading\Thesis_Rillan Trading\obj\Debug\Thesis_Rillan_Trading.userCon_productMgt.resources
-D:\Program Files\GitHub\Thesis-RLTrading\Thesis_Rillan Trading\Thesis_Rillan Trading\obj\Debug\Thesis_Rillan_Trading.userCon_purchaseOrder.resources
 D:\Program Files\GitHub\Thesis-RLTrading\Thesis_Rillan Trading\Thesis_Rillan Trading\obj\Debug\Thesis_Rillan_Trading.userCon_supplierItem.resources
 D:\Program Files\GitHub\Thesis-RLTrading\Thesis_Rillan Trading\Thesis_Rillan Trading\obj\Debug\Thesis_Rillan_Trading.userCon_supplierProfiles.resources
 D:\Program Files\GitHub\Thesis-RLTrading\Thesis_Rillan Trading\Thesis_Rillan Trading\obj\Debug\Thesis_Rillan_Trading.viewForm_PO_items.resources
 D:\Program Files\GitHub\Thesis-RLTrading\Thesis_Rillan Trading\Thesis_Rillan Trading\obj\Debug\Thesis_Rillan_Trading.userCon_warehouseMgt.resources
 D:\Program Files\GitHub\Thesis-RLTrading\Thesis_Rillan Trading\Thesis_Rillan Trading\obj\Debug\Thesis_Rillan_Trading.formPurchaseOrder.resources
+D:\Program Files\GitHub\Thesis-RLTrading\Thesis_Rillan Trading\Thesis_Rillan Trading\obj\Debug\Thesis_Rillan_Trading.formWarehouseMgt.resources
+D:\Program Files\GitHub\Thesis-RLTrading\Thesis_Rillan Trading\Thesis_Rillan Trading\obj\Debug\Thesis_Rillan_Trading.formSalesMgt.resources
+D:\Program Files\GitHub\Thesis-RLTrading\Thesis_Rillan Trading\Thesis_Rillan Trading\obj\Debug\Thesis_Rillan_Trading.viewFormPOList.resources
+D:\Program Files\GitHub\Thesis-RLTrading\Thesis_Rillan Trading\Thesis_Rillan Trading\obj\Debug\Thesis_Rillan_Trading.viewFormSOList.resources

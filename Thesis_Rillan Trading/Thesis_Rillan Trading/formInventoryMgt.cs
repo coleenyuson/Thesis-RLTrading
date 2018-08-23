@@ -17,6 +17,7 @@ namespace Thesis_Rillan_Trading
         public Form refLogin { get; set; }
         public Form refSettings { get; set; }
         public Form refPO { get; set; }
+        public Form refWhseMgt { get; set; }
 
         public List<classItems> itemValues { get; set; }
 
@@ -76,11 +77,11 @@ namespace Thesis_Rillan_Trading
             
         }
 
-        private void btn_purchaseOrder_Click(object sender, EventArgs e)
+        private void btn_whseMgt_Click(object sender, EventArgs e)
         {
-            formPurchaseOrder fPO = new formPurchaseOrder();
-            fPO.refInventory = this;
-            fPO.Show();
+            formWarehouseMgt fWhse = new formWarehouseMgt();
+            fWhse.refInvMgt = this;
+            fWhse.Show();
             this.Hide();
         }
     }
