@@ -46,9 +46,9 @@ namespace Thesis_Rillan_Trading
             try
             {
                 conn.Open();
-                adapter = new MySqlDataAdapter("SELECT item_id, item_code, item_desc, item_brand, item_category from item" +
-                    " INNER JOIN ITEM_BRAND ON ITEM_BRAND_ID = ITEM_BRAND_FK" +
-                    " INNER JOIN ITEM_CATEGORY ON ITEM_CATEG_ID = ITEM_CATEGORY_FK", conn);
+                adapter = new MySqlDataAdapter("SELECT item_id, item_code, item_desc, item_brand, item_category FROM item" +
+                    " INNER JOIN ITEM_BRAND ON ITEM_BRAND_FK = ITEM_BRAND_ID " +
+                    " INNER JOIN ITEM_CATEGORY ON ITEM_CATEGORY_FK = ITEM_CATEG_ID ", conn);
                 dataTable = new DataTable();
                 adapter.Fill(dataTable);
 
@@ -56,11 +56,11 @@ namespace Thesis_Rillan_Trading
                 {
                     int n = dgv_items.Rows.Add();
                     dgv_items.Rows[n].Cells[0].Value = false;
-                    dgv_items.Rows[n].Cells[1].Value = item[0].ToString();
-                    dgv_items.Rows[n].Cells[2].Value = item[1].ToString();
-                    dgv_items.Rows[n].Cells[3].Value = item[2].ToString();
-                    dgv_items.Rows[n].Cells[4].Value = item[3].ToString();
-                    dgv_items.Rows[n].Cells[5].Value = item[4].ToString();
+                    dgv_items.Rows[n].Cells[1].Value = item[0].ToString(); // item id
+                    dgv_items.Rows[n].Cells[2].Value = item[1].ToString(); // item code
+                    dgv_items.Rows[n].Cells[3].Value = item[2].ToString(); // description
+                    dgv_items.Rows[n].Cells[4].Value = item[3].ToString(); // brand
+                    dgv_items.Rows[n].Cells[5].Value = item[4].ToString(); // category
                 }
 
                 conn.Close();

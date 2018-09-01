@@ -41,14 +41,15 @@
             this.btn_cancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_assignmentMode = new System.Windows.Forms.Button();
-            this.btn_findMode = new System.Windows.Forms.Button();
+            this.btn_viewMode = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.sellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemBrand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_removeItem = new System.Windows.Forms.Button();
+            this.btn_Update = new System.Windows.Forms.Button();
             this.itemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbox_supplier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_supplierList)).BeginInit();
             this.gbox_itemList.SuspendLayout();
@@ -125,21 +126,22 @@
             // 
             // gbox_itemList
             // 
+            this.gbox_itemList.Controls.Add(this.btn_removeItem);
             this.gbox_itemList.Controls.Add(this.btn_addItem);
             this.gbox_itemList.Controls.Add(this.dgv_itemList);
             this.gbox_itemList.Location = new System.Drawing.Point(442, 89);
             this.gbox_itemList.Name = "gbox_itemList";
-            this.gbox_itemList.Size = new System.Drawing.Size(643, 473);
+            this.gbox_itemList.Size = new System.Drawing.Size(631, 473);
             this.gbox_itemList.TabIndex = 1;
             this.gbox_itemList.TabStop = false;
             this.gbox_itemList.Text = "PRODUCT LIST";
             // 
             // btn_addItem
             // 
-            this.btn_addItem.BackColor = System.Drawing.Color.LightGray;
+            this.btn_addItem.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btn_addItem.FlatAppearance.BorderSize = 0;
             this.btn_addItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_addItem.Location = new System.Drawing.Point(525, 20);
+            this.btn_addItem.Location = new System.Drawing.Point(513, 22);
             this.btn_addItem.Name = "btn_addItem";
             this.btn_addItem.Size = new System.Drawing.Size(112, 27);
             this.btn_addItem.TabIndex = 4;
@@ -158,18 +160,18 @@
             this.itemID,
             this.itemCode,
             this.itemDesc,
-            this.itemBrand,
-            this.itemCategory,
-            this.sellingPrice});
+            this.sellingPrice,
+            this.itemSelect});
             this.dgv_itemList.Location = new System.Drawing.Point(6, 55);
             this.dgv_itemList.Name = "dgv_itemList";
-            this.dgv_itemList.ReadOnly = true;
             this.dgv_itemList.RowHeadersVisible = false;
             this.dgv_itemList.RowTemplate.Height = 24;
-            this.dgv_itemList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_itemList.Size = new System.Drawing.Size(631, 412);
+            this.dgv_itemList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgv_itemList.Size = new System.Drawing.Size(619, 412);
             this.dgv_itemList.TabIndex = 3;
             this.dgv_itemList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_itemList_CellClick);
+            this.dgv_itemList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_itemList_CellContentClick);
+            this.dgv_itemList.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_itemList_CellValueChanged);
             // 
             // btn_assignItem
             // 
@@ -178,11 +180,11 @@
             this.btn_assignItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_assignItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_assignItem.ForeColor = System.Drawing.Color.White;
-            this.btn_assignItem.Location = new System.Drawing.Point(958, 568);
+            this.btn_assignItem.Location = new System.Drawing.Point(940, 573);
             this.btn_assignItem.Name = "btn_assignItem";
             this.btn_assignItem.Size = new System.Drawing.Size(127, 36);
             this.btn_assignItem.TabIndex = 2;
-            this.btn_assignItem.Text = "Assign";
+            this.btn_assignItem.Text = "ASSIGN";
             this.btn_assignItem.UseVisualStyleBackColor = false;
             this.btn_assignItem.Click += new System.EventHandler(this.btn_assignItem_Click);
             // 
@@ -192,7 +194,7 @@
             this.btn_cancel.FlatAppearance.BorderSize = 0;
             this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancel.Location = new System.Drawing.Point(825, 568);
+            this.btn_cancel.Location = new System.Drawing.Point(807, 573);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(127, 36);
             this.btn_cancel.TabIndex = 3;
@@ -214,7 +216,7 @@
             this.btn_assignmentMode.BackColor = System.Drawing.Color.LightGray;
             this.btn_assignmentMode.FlatAppearance.BorderSize = 0;
             this.btn_assignmentMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_assignmentMode.Location = new System.Drawing.Point(967, 25);
+            this.btn_assignmentMode.Location = new System.Drawing.Point(955, 29);
             this.btn_assignmentMode.Name = "btn_assignmentMode";
             this.btn_assignmentMode.Size = new System.Drawing.Size(112, 27);
             this.btn_assignmentMode.TabIndex = 3;
@@ -222,71 +224,88 @@
             this.btn_assignmentMode.UseVisualStyleBackColor = false;
             this.btn_assignmentMode.Click += new System.EventHandler(this.btn_assignmentMode_Click);
             // 
-            // btn_findMode
+            // btn_viewMode
             // 
-            this.btn_findMode.BackColor = System.Drawing.Color.LightGray;
-            this.btn_findMode.FlatAppearance.BorderSize = 0;
-            this.btn_findMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_findMode.Location = new System.Drawing.Point(849, 26);
-            this.btn_findMode.Name = "btn_findMode";
-            this.btn_findMode.Size = new System.Drawing.Size(112, 27);
-            this.btn_findMode.TabIndex = 48;
-            this.btn_findMode.Text = "Find";
-            this.btn_findMode.UseVisualStyleBackColor = false;
-            this.btn_findMode.Click += new System.EventHandler(this.btn_findMode_Click);
+            this.btn_viewMode.BackColor = System.Drawing.Color.LightGray;
+            this.btn_viewMode.FlatAppearance.BorderSize = 0;
+            this.btn_viewMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_viewMode.Location = new System.Drawing.Point(837, 30);
+            this.btn_viewMode.Name = "btn_viewMode";
+            this.btn_viewMode.Size = new System.Drawing.Size(112, 27);
+            this.btn_viewMode.TabIndex = 48;
+            this.btn_viewMode.Text = "View";
+            this.btn_viewMode.UseVisualStyleBackColor = false;
+            this.btn_viewMode.Click += new System.EventHandler(this.btn_viewMode_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(733, 29);
+            this.label2.Location = new System.Drawing.Point(721, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 20);
             this.label2.TabIndex = 49;
             this.label2.Text = "Window Mode:";
+            // 
+            // btn_removeItem
+            // 
+            this.btn_removeItem.BackColor = System.Drawing.Color.IndianRed;
+            this.btn_removeItem.FlatAppearance.BorderSize = 0;
+            this.btn_removeItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_removeItem.Location = new System.Drawing.Point(395, 22);
+            this.btn_removeItem.Name = "btn_removeItem";
+            this.btn_removeItem.Size = new System.Drawing.Size(112, 27);
+            this.btn_removeItem.TabIndex = 5;
+            this.btn_removeItem.Text = "Remove Item";
+            this.btn_removeItem.UseVisualStyleBackColor = false;
+            this.btn_removeItem.Click += new System.EventHandler(this.btn_removeItem_Click);
+            // 
+            // btn_Update
+            // 
+            this.btn_Update.BackColor = System.Drawing.Color.Teal;
+            this.btn_Update.FlatAppearance.BorderSize = 0;
+            this.btn_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Update.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Update.ForeColor = System.Drawing.Color.White;
+            this.btn_Update.Location = new System.Drawing.Point(940, 573);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(127, 36);
+            this.btn_Update.TabIndex = 50;
+            this.btn_Update.Text = "UPDATE";
+            this.btn_Update.UseVisualStyleBackColor = false;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
+            // 
+            // itemID
+            // 
+            this.itemID.HeaderText = "ID";
+            this.itemID.Name = "itemID";
+            this.itemID.Visible = false;
+            // 
+            // itemCode
+            // 
+            this.itemCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.itemCode.HeaderText = "Item Code";
+            this.itemCode.Name = "itemCode";
+            this.itemCode.ReadOnly = true;
+            // 
+            // itemDesc
+            // 
+            this.itemDesc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.itemDesc.HeaderText = "Description";
+            this.itemDesc.Name = "itemDesc";
+            this.itemDesc.ReadOnly = true;
             // 
             // sellingPrice
             // 
             this.sellingPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sellingPrice.HeaderText = "Selling Price";
             this.sellingPrice.Name = "sellingPrice";
-            this.sellingPrice.ReadOnly = true;
             // 
-            // itemCategory
+            // itemSelect
             // 
-            this.itemCategory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.itemCategory.HeaderText = "Category";
-            this.itemCategory.Name = "itemCategory";
-            this.itemCategory.ReadOnly = true;
-            // 
-            // itemBrand
-            // 
-            this.itemBrand.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.itemBrand.HeaderText = "Brand";
-            this.itemBrand.Name = "itemBrand";
-            this.itemBrand.ReadOnly = true;
-            // 
-            // itemDesc
-            // 
-            this.itemDesc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.itemDesc.HeaderText = "Description";
-            this.itemDesc.Name = "itemDesc";
-            this.itemDesc.ReadOnly = true;
-            this.itemDesc.Width = 114;
-            // 
-            // itemCode
-            // 
-            this.itemCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.itemCode.HeaderText = "Item Code";
-            this.itemCode.Name = "itemCode";
-            this.itemCode.ReadOnly = true;
-            this.itemCode.Width = 107;
-            // 
-            // itemID
-            // 
-            this.itemID.HeaderText = "ID";
-            this.itemID.Name = "itemID";
-            this.itemID.ReadOnly = true;
-            this.itemID.Visible = false;
+            this.itemSelect.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.itemSelect.HeaderText = "Remove";
+            this.itemSelect.Name = "itemSelect";
+            this.itemSelect.Width = 69;
             // 
             // userCon_supplierItem
             // 
@@ -294,8 +313,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btn_findMode);
+            this.Controls.Add(this.btn_viewMode);
             this.Controls.Add(this.btn_assignmentMode);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_cancel);
@@ -332,13 +352,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn suppID;
         private System.Windows.Forms.DataGridViewTextBoxColumn suppName;
         private System.Windows.Forms.Button btn_assignmentMode;
-        private System.Windows.Forms.Button btn_findMode;
+        private System.Windows.Forms.Button btn_viewMode;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_removeItem;
+        private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemID;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemDesc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemBrand;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn sellingPrice;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn itemSelect;
     }
 }

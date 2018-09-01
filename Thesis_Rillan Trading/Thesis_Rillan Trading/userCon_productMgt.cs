@@ -115,7 +115,6 @@ namespace Thesis_Rillan_Trading
                 tbox_itemDesc.Text = dataGV_prodList.SelectedRows[0].Cells[2].Value.ToString();
                 cmbBox_itemBrand.Text = dataGV_prodList.SelectedRows[0].Cells[3].Value.ToString();
                 cmbBox_itemCateg.Text = dataGV_prodList.SelectedRows[0].Cells[4].Value.ToString();
-                tbox_sellingPrice.Text = dataGV_prodList.SelectedRows[0].Cells[5].Value.ToString();
 
                 //Shows update and cancel button
                 btn_Update.Visible = true;
@@ -139,7 +138,9 @@ namespace Thesis_Rillan_Trading
             try
             {
                 conn.Open();
-                query = "SELECT i.item_id, i.item_code, i.item_desc, b.item_brand, c.item_category, i.item_sellingPrice FROM item i INNER JOIN item_brand b ON i.item_brand_fk = b.item_brand_id INNER JOIN item_category c ON i.item_category_fk = c.item_categ_id;";
+                query = "SELECT i.item_id, i.item_code, i.item_desc, b.item_brand, c.item_category FROM item i " +
+                    " INNER JOIN item_brand b ON i.item_brand_fk = b.item_brand_id " +
+                    " INNER JOIN item_category c ON i.item_category_fk = c.item_categ_id;";
                 command = new MySqlCommand(query, conn);
 
                 adapter = new MySqlDataAdapter(command);
@@ -159,7 +160,6 @@ namespace Thesis_Rillan_Trading
             dataGV_prodList.Columns["item_desc"].HeaderText = "Description";
             dataGV_prodList.Columns["item_brand"].HeaderText = "Brand";
             dataGV_prodList.Columns["item_category"].HeaderText = "Category";
-            dataGV_prodList.Columns["item_sellingPrice"].HeaderText = "Selling Price";
         }
 
         // - - Add New Item - -
@@ -167,7 +167,7 @@ namespace Thesis_Rillan_Trading
         {
             //Validation - - if either of the fields do not contain an input, it will not proceed on adding the item to database
             if (string.IsNullOrWhiteSpace(tbox_itemCode.Text.ToString()) || string.IsNullOrWhiteSpace(tbox_itemDesc.Text.ToString()) || string.IsNullOrWhiteSpace(cmbBox_itemBrand.Text.ToString()) ||
-                string.IsNullOrWhiteSpace(cmbBox_itemCateg.Text.ToString()) || string.IsNullOrWhiteSpace(tbox_sellingPrice.Text.ToString()))
+                string.IsNullOrWhiteSpace(cmbBox_itemCateg.Text.ToString()))
             {
                 MessageBox.Show("Please make sure all fields have inputs.");
             }
@@ -178,7 +178,6 @@ namespace Thesis_Rillan_Trading
                 itemDesc = tbox_itemDesc.Text;
                 brand = cmbBox_itemBrand.Text;
                 categ = cmbBox_itemCateg.Text;
-                sellingPrice = float.Parse(tbox_sellingPrice.Text);
 
                 try
                 {
@@ -186,8 +185,8 @@ namespace Thesis_Rillan_Trading
 
                     //Inserting  values to MySql item table
                     MySqlCommand DatabaseCommand = conn.CreateCommand();
-                    DatabaseCommand.CommandText = "INSERT INTO item (item_code, item_desc, item_brand_fk, item_category_fk, item_sellingPrice) " +
-                        " VALUES ('" + itemCode + "','" + itemDesc + "','" + getItemBrandID() + "','" + getItemCategID() + "','" + sellingPrice + "')";
+                    DatabaseCommand.CommandText = "INSERT INTO item (item_code, item_desc, item_brand_fk, item_category_fk) " +
+                        " VALUES ('" + itemCode + "','" + itemDesc + "','" + getItemBrandID() + "','" + getItemCategID() + "')";
                     if (MessageBox.Show("Are you sure you want to add this item to the database?", "Add Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         DatabaseCommand.ExecuteNonQuery();
@@ -215,7 +214,7 @@ namespace Thesis_Rillan_Trading
             try
             {
             
-                String q = "UPDATE item SET item_code = '" + itemCode + "', item_desc = '" + itemDesc + "',  item_brand_fk = '" + getItemBrandID() + "', item_category_fk = '" + getItemCategID() + "', item_sellingPrice = '" + sellingPrice + "'  WHERE item_id = '" + item_id + "' ";
+                String q = "UPDATE item SET item_code = '" + itemCode + "', item_desc = '" + itemDesc + "',  item_brand_fk = '" + getItemBrandID() + "', item_category_fk = '" + getItemCategID() + "'  WHERE item_id = '" + item_id + "' ";
 
                 conn.Open();
                 MySqlDataAdapter adapter = new MySqlDataAdapter(q, conn);
@@ -238,9 +237,7 @@ namespace Thesis_Rillan_Trading
             }
             
         }
-
         
-
         // - - Gets the equivalent item brand ID of the item brand string - - 
         private int getItemBrandID()
         {
@@ -363,10 +360,9 @@ namespace Thesis_Rillan_Trading
         }
 
         private void fieldsReset()
-        {
+        { 
             tbox_itemCode.Text = "";
             tbox_itemDesc.Text = "";
-            tbox_sellingPrice.Text = "";
             cmbBox_itemBrand.Text = "";
             cmbBox_itemCateg.Text = "";
         }

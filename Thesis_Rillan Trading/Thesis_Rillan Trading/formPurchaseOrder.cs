@@ -116,20 +116,7 @@ namespace Thesis_Rillan_Trading
 
         private void btn_itemView_Click(object sender, EventArgs e)
         {
-            viewForm_items fviewItems = new viewForm_items();
-            DialogResult dr = fviewItems.ShowDialog(this);
-
-            if (dr == DialogResult.Cancel)
-            {
-                fviewItems.Close();
-            }
-            else if (dr == DialogResult.OK)
-            {
-                itemValues = fviewItems.getItems();
-                AddToGrid(itemValues);
-                fviewItems.Close();
-            }
-
+           
         }
 
         private void btn_Back_Click(object sender, EventArgs e)
@@ -230,19 +217,7 @@ namespace Thesis_Rillan_Trading
         }
 
         // - -  Add data to DGV from another form -- 
-        public void AddToGrid(List<classItems> val)
-        {
-            if (val != null)
-            {
-                foreach (classItems item in val)
-                {
-                    int n = dgv_orderLine.Rows.Add();
-                    dgv_orderLine.Rows[n].Cells[0].Value = item.itemID;
-                    dgv_orderLine.Rows[n].Cells[1].Value = item.itemCode;
-                    dgv_orderLine.Rows[n].Cells[2].Value = item.itemDesc;
-                }
-            }
-        }
+        
         
         #region Order Mode Functions
 
