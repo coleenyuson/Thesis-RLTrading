@@ -17,7 +17,8 @@ namespace Thesis_Rillan_Trading
         public Form refLogin { get; set; }
         public Form refSettings { get; set; }
         public Form refPO { get; set; }
-        public Form refWhseMgt { get; set; }
+        public Form refInvData { get; set; }
+        public Form refitemMasterList { get; set; }
 
         public List<classItems> itemValues { get; set; }
 
@@ -30,7 +31,6 @@ namespace Thesis_Rillan_Trading
         {
             // - - When the form loads, it will automatically load the dashboard window - - 
             userControl_invHome.Visible = true;
-            userControl_prodList.Visible = false;
         }
 
 
@@ -52,20 +52,18 @@ namespace Thesis_Rillan_Trading
             this.Close();
         }
 
-
-        // - - Shows the product management window - - 
-        private void btn_productMgt_Click(object sender, EventArgs e)
+        private void btn_itemMasterList_Click(object sender, EventArgs e)
         {
-            userControl_invHome.Visible = false;
-            userControl_prodList.Visible = true;
+            formItemMasterList fIML = new formItemMasterList();
+            fIML.refInvMgt = this;
+            fIML.Show();
+            this.Close();
         }
-
 
         // - - Shows the dashboard window - -
         private void btn_dashboard_Click(object sender, EventArgs e)
         {
             userControl_invHome.Visible = true;
-            userControl_prodList.Visible = false;
         }
 
         private void btn_Settings_Click(object sender, EventArgs e)
@@ -79,10 +77,20 @@ namespace Thesis_Rillan_Trading
 
         private void btn_whseMgt_Click(object sender, EventArgs e)
         {
-            formWarehouseMgt fWhse = new formWarehouseMgt();
+            formInventoryData fWhse = new formInventoryData();
             fWhse.refInvMgt = this;
             fWhse.Show();
             this.Hide();
+        }
+
+        private void userControl_invHome_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnl_Header_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

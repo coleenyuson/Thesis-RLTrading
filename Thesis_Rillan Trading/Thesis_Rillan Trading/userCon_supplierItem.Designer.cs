@@ -35,21 +35,21 @@
             this.suppID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.suppName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbox_itemList = new System.Windows.Forms.GroupBox();
+            this.btn_removeItem = new System.Windows.Forms.Button();
             this.btn_addItem = new System.Windows.Forms.Button();
             this.dgv_itemList = new System.Windows.Forms.DataGridView();
+            this.itemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btn_assignItem = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_assignmentMode = new System.Windows.Forms.Button();
             this.btn_viewMode = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_removeItem = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
-            this.itemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gbox_supplier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_supplierList)).BeginInit();
             this.gbox_itemList.SuspendLayout();
@@ -134,7 +134,20 @@
             this.gbox_itemList.Size = new System.Drawing.Size(631, 473);
             this.gbox_itemList.TabIndex = 1;
             this.gbox_itemList.TabStop = false;
-            this.gbox_itemList.Text = "PRODUCT LIST";
+            this.gbox_itemList.Text = "ITEM LIST";
+            // 
+            // btn_removeItem
+            // 
+            this.btn_removeItem.BackColor = System.Drawing.Color.IndianRed;
+            this.btn_removeItem.FlatAppearance.BorderSize = 0;
+            this.btn_removeItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_removeItem.Location = new System.Drawing.Point(395, 22);
+            this.btn_removeItem.Name = "btn_removeItem";
+            this.btn_removeItem.Size = new System.Drawing.Size(112, 27);
+            this.btn_removeItem.TabIndex = 5;
+            this.btn_removeItem.Text = "Remove Item";
+            this.btn_removeItem.UseVisualStyleBackColor = false;
+            this.btn_removeItem.Click += new System.EventHandler(this.btn_removeItem_Click);
             // 
             // btn_addItem
             // 
@@ -172,6 +185,39 @@
             this.dgv_itemList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_itemList_CellClick);
             this.dgv_itemList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_itemList_CellContentClick);
             this.dgv_itemList.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_itemList_CellValueChanged);
+            // 
+            // itemID
+            // 
+            this.itemID.HeaderText = "ID";
+            this.itemID.Name = "itemID";
+            this.itemID.Visible = false;
+            // 
+            // itemCode
+            // 
+            this.itemCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.itemCode.HeaderText = "Item Code";
+            this.itemCode.Name = "itemCode";
+            this.itemCode.ReadOnly = true;
+            // 
+            // itemDesc
+            // 
+            this.itemDesc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.itemDesc.HeaderText = "Description";
+            this.itemDesc.Name = "itemDesc";
+            this.itemDesc.ReadOnly = true;
+            // 
+            // sellingPrice
+            // 
+            this.sellingPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sellingPrice.HeaderText = "Selling Price";
+            this.sellingPrice.Name = "sellingPrice";
+            // 
+            // itemSelect
+            // 
+            this.itemSelect.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.itemSelect.HeaderText = "Remove";
+            this.itemSelect.Name = "itemSelect";
+            this.itemSelect.Width = 69;
             // 
             // btn_assignItem
             // 
@@ -246,19 +292,6 @@
             this.label2.TabIndex = 49;
             this.label2.Text = "Window Mode:";
             // 
-            // btn_removeItem
-            // 
-            this.btn_removeItem.BackColor = System.Drawing.Color.IndianRed;
-            this.btn_removeItem.FlatAppearance.BorderSize = 0;
-            this.btn_removeItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_removeItem.Location = new System.Drawing.Point(395, 22);
-            this.btn_removeItem.Name = "btn_removeItem";
-            this.btn_removeItem.Size = new System.Drawing.Size(112, 27);
-            this.btn_removeItem.TabIndex = 5;
-            this.btn_removeItem.Text = "Remove Item";
-            this.btn_removeItem.UseVisualStyleBackColor = false;
-            this.btn_removeItem.Click += new System.EventHandler(this.btn_removeItem_Click);
-            // 
             // btn_Update
             // 
             this.btn_Update.BackColor = System.Drawing.Color.Teal;
@@ -273,39 +306,6 @@
             this.btn_Update.Text = "UPDATE";
             this.btn_Update.UseVisualStyleBackColor = false;
             this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
-            // 
-            // itemID
-            // 
-            this.itemID.HeaderText = "ID";
-            this.itemID.Name = "itemID";
-            this.itemID.Visible = false;
-            // 
-            // itemCode
-            // 
-            this.itemCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.itemCode.HeaderText = "Item Code";
-            this.itemCode.Name = "itemCode";
-            this.itemCode.ReadOnly = true;
-            // 
-            // itemDesc
-            // 
-            this.itemDesc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.itemDesc.HeaderText = "Description";
-            this.itemDesc.Name = "itemDesc";
-            this.itemDesc.ReadOnly = true;
-            // 
-            // sellingPrice
-            // 
-            this.sellingPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sellingPrice.HeaderText = "Selling Price";
-            this.sellingPrice.Name = "sellingPrice";
-            // 
-            // itemSelect
-            // 
-            this.itemSelect.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.itemSelect.HeaderText = "Remove";
-            this.itemSelect.Name = "itemSelect";
-            this.itemSelect.Width = 69;
             // 
             // userCon_supplierItem
             // 

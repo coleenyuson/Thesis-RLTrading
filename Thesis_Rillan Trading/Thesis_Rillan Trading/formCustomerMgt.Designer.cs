@@ -41,8 +41,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_DateTime = new System.Windows.Forms.Label();
             this.pnl_window = new System.Windows.Forms.Panel();
-            this.userControl_custAccounts = new Thesis_Rillan_Trading.userCon_customerAccounts();
             this.userControl_custProfs = new Thesis_Rillan_Trading.userCon_customerProfile();
+            this.userControl_custAccounts = new Thesis_Rillan_Trading.userCon_customerAccounts();
             this.pnl_Header.SuspendLayout();
             this.pnl_sideMenu.SuspendLayout();
             this.pnl_Footer.SuspendLayout();
@@ -231,6 +231,17 @@
             this.pnl_window.Size = new System.Drawing.Size(1098, 601);
             this.pnl_window.TabIndex = 36;
             // 
+            // userControl_custProfs
+            // 
+            this.userControl_custProfs.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.userControl_custProfs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_custProfs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userControl_custProfs.Location = new System.Drawing.Point(0, 0);
+            this.userControl_custProfs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.userControl_custProfs.Name = "userControl_custProfs";
+            this.userControl_custProfs.Size = new System.Drawing.Size(1098, 601);
+            this.userControl_custProfs.TabIndex = 1;
+            // 
             // userControl_custAccounts
             // 
             this.userControl_custAccounts.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -243,17 +254,6 @@
             this.userControl_custAccounts.Size = new System.Drawing.Size(1098, 601);
             this.userControl_custAccounts.TabIndex = 0;
             // 
-            // userControl_custProfs
-            // 
-            this.userControl_custProfs.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.userControl_custProfs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControl_custProfs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControl_custProfs.Location = new System.Drawing.Point(0, 0);
-            this.userControl_custProfs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.userControl_custProfs.Name = "userControl_custProfs";
-            this.userControl_custProfs.Size = new System.Drawing.Size(1098, 601);
-            this.userControl_custProfs.TabIndex = 1;
-            // 
             // formCustomerMgt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -264,7 +264,7 @@
             this.Controls.Add(this.pnl_sideMenu);
             this.Controls.Add(this.pnl_Header);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

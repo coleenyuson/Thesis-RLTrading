@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="icons8_Receipt_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_Receipt_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_View_More_10px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_View_More_10px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -166,6 +169,9 @@
   <data name="icons8_Shipped_12px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_Shipped_12px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="RillanTradingLogo-transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RillanTradingLogo-transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_Ratings_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_Ratings_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -175,14 +181,17 @@
   <data name="icons8_Shop_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_Shop_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_Purchase_Order_32px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_Purchase_Order_32px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_Reseller_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_Reseller_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_Product_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_Product_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_Reseller_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_Reseller_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_User_Account_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_User_Account_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_Purchase_Order_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_Purchase_Order_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_Delivered_12px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_Delivered_12px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,13 +205,22 @@
   <data name="icons8_Profile_32px_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_Profile_32px_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_Move_Stock_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_Move_Stock_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_Contact_Details_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_Contact_Details_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_Bill_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_Bill_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_Purchase_Order_32px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_Purchase_Order_32px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_Home_32px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_Home_32px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_Contact_Details_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_Contact_Details_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_Return_Purchase_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_Return_Purchase_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

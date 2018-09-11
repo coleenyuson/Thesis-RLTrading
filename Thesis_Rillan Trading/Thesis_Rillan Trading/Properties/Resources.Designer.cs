@@ -163,6 +163,16 @@ namespace Thesis_Rillan_Trading.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Move_Stock_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Move_Stock_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Ok_12px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Ok_12px", resourceCulture);
@@ -203,6 +213,16 @@ namespace Thesis_Rillan_Trading.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Purchase_Order_100px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Purchase_Order_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Purchase_Order_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Purchase_Order_32px", resourceCulture);
@@ -233,6 +253,16 @@ namespace Thesis_Rillan_Trading.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_Receipt_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Receipt_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Refresh_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Refresh_32px", resourceCulture);
@@ -246,6 +276,16 @@ namespace Thesis_Rillan_Trading.Properties {
         internal static System.Drawing.Bitmap icons8_Reseller_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Reseller_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_Return_Purchase_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_Return_Purchase_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,6 +343,16 @@ namespace Thesis_Rillan_Trading.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_User_Account_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_User_Account_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_View_More_10px {
             get {
                 object obj = ResourceManager.GetObject("icons8_View_More_10px", resourceCulture);
@@ -336,6 +386,16 @@ namespace Thesis_Rillan_Trading.Properties {
         internal static System.Drawing.Bitmap icons8_Warehouse_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Warehouse_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RillanTradingLogo_transparent {
+            get {
+                object obj = ResourceManager.GetObject("RillanTradingLogo-transparent", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

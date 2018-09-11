@@ -66,14 +66,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Back = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btn_orderMode = new System.Windows.Forms.Button();
+            this.btn_findMode = new System.Windows.Forms.Button();
             this.pnl_Footer = new System.Windows.Forms.Panel();
             this.lbl_Role = new System.Windows.Forms.Label();
             this.lbl_DateTime = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btn_findMode = new System.Windows.Forms.Button();
-            this.btn_orderMode = new System.Windows.Forms.Button();
             this.btn_find = new System.Windows.Forms.Button();
-            this.btn_Back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_orderLine)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnl_Footer.SuspendLayout();
@@ -363,6 +363,7 @@
             // 
             // dtp_docDate
             // 
+            this.dtp_docDate.Enabled = false;
             this.dtp_docDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_docDate.Location = new System.Drawing.Point(813, 141);
             this.dtp_docDate.Name = "dtp_docDate";
@@ -413,6 +414,7 @@
             this.tbox_supplier.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbox_supplier.Location = new System.Drawing.Point(240, 101);
             this.tbox_supplier.Name = "tbox_supplier";
+            this.tbox_supplier.ReadOnly = true;
             this.tbox_supplier.Size = new System.Drawing.Size(233, 27);
             this.tbox_supplier.TabIndex = 48;
             this.tbox_supplier.TextChanged += new System.EventHandler(this.tbox_supplier_TextChanged);
@@ -449,6 +451,63 @@
             this.panel1.TabIndex = 78;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // btn_Back
+            // 
+            this.btn_Back.BackColor = System.Drawing.Color.CadetBlue;
+            this.btn_Back.FlatAppearance.BorderSize = 0;
+            this.btn_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Back.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btn_Back.ForeColor = System.Drawing.Color.Snow;
+            this.btn_Back.Image = ((System.Drawing.Image)(resources.GetObject("btn_Back.Image")));
+            this.btn_Back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Back.Location = new System.Drawing.Point(1, 1);
+            this.btn_Back.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(78, 38);
+            this.btn_Back.TabIndex = 3;
+            this.btn_Back.Text = "BACK";
+            this.btn_Back.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Back.UseVisualStyleBackColor = false;
+            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(774, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(110, 20);
+            this.label5.TabIndex = 82;
+            this.label5.Text = "Window Mode:";
+            // 
+            // btn_orderMode
+            // 
+            this.btn_orderMode.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_orderMode.FlatAppearance.BorderSize = 0;
+            this.btn_orderMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_orderMode.ForeColor = System.Drawing.Color.White;
+            this.btn_orderMode.Location = new System.Drawing.Point(1008, 7);
+            this.btn_orderMode.Name = "btn_orderMode";
+            this.btn_orderMode.Size = new System.Drawing.Size(112, 27);
+            this.btn_orderMode.TabIndex = 80;
+            this.btn_orderMode.Text = "Order";
+            this.btn_orderMode.UseVisualStyleBackColor = false;
+            this.btn_orderMode.Click += new System.EventHandler(this.btn_orderMode_Click);
+            // 
+            // btn_findMode
+            // 
+            this.btn_findMode.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_findMode.FlatAppearance.BorderSize = 0;
+            this.btn_findMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_findMode.ForeColor = System.Drawing.Color.White;
+            this.btn_findMode.Location = new System.Drawing.Point(890, 7);
+            this.btn_findMode.Name = "btn_findMode";
+            this.btn_findMode.Size = new System.Drawing.Size(112, 27);
+            this.btn_findMode.TabIndex = 81;
+            this.btn_findMode.Text = "Find";
+            this.btn_findMode.UseVisualStyleBackColor = false;
+            this.btn_findMode.Click += new System.EventHandler(this.btn_findMode_Click);
+            // 
             // pnl_Footer
             // 
             this.pnl_Footer.BackColor = System.Drawing.Color.CadetBlue;
@@ -482,44 +541,6 @@
             this.lbl_DateTime.TabIndex = 3;
             this.lbl_DateTime.Text = "hh:mm January 1, 2018";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(774, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 20);
-            this.label5.TabIndex = 82;
-            this.label5.Text = "Window Mode:";
-            // 
-            // btn_findMode
-            // 
-            this.btn_findMode.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_findMode.FlatAppearance.BorderSize = 0;
-            this.btn_findMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_findMode.ForeColor = System.Drawing.Color.White;
-            this.btn_findMode.Location = new System.Drawing.Point(890, 7);
-            this.btn_findMode.Name = "btn_findMode";
-            this.btn_findMode.Size = new System.Drawing.Size(112, 27);
-            this.btn_findMode.TabIndex = 81;
-            this.btn_findMode.Text = "Find";
-            this.btn_findMode.UseVisualStyleBackColor = false;
-            this.btn_findMode.Click += new System.EventHandler(this.btn_findMode_Click);
-            // 
-            // btn_orderMode
-            // 
-            this.btn_orderMode.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_orderMode.FlatAppearance.BorderSize = 0;
-            this.btn_orderMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_orderMode.ForeColor = System.Drawing.Color.White;
-            this.btn_orderMode.Location = new System.Drawing.Point(1008, 7);
-            this.btn_orderMode.Name = "btn_orderMode";
-            this.btn_orderMode.Size = new System.Drawing.Size(112, 27);
-            this.btn_orderMode.TabIndex = 80;
-            this.btn_orderMode.Text = "Order";
-            this.btn_orderMode.UseVisualStyleBackColor = false;
-            this.btn_orderMode.Click += new System.EventHandler(this.btn_orderMode_Click);
-            // 
             // btn_find
             // 
             this.btn_find.BackColor = System.Drawing.Color.SeaGreen;
@@ -527,32 +548,13 @@
             this.btn_find.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_find.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_find.ForeColor = System.Drawing.Color.White;
-            this.btn_find.Location = new System.Drawing.Point(41, 597);
+            this.btn_find.Location = new System.Drawing.Point(50, 578);
             this.btn_find.Name = "btn_find";
             this.btn_find.Size = new System.Drawing.Size(124, 37);
             this.btn_find.TabIndex = 83;
             this.btn_find.Text = "FIND";
             this.btn_find.UseVisualStyleBackColor = false;
             this.btn_find.Click += new System.EventHandler(this.btn_find_Click);
-            // 
-            // btn_Back
-            // 
-            this.btn_Back.BackColor = System.Drawing.Color.CadetBlue;
-            this.btn_Back.FlatAppearance.BorderSize = 0;
-            this.btn_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Back.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btn_Back.ForeColor = System.Drawing.Color.Snow;
-            this.btn_Back.Image = ((System.Drawing.Image)(resources.GetObject("btn_Back.Image")));
-            this.btn_Back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Back.Location = new System.Drawing.Point(1, 1);
-            this.btn_Back.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(78, 38);
-            this.btn_Back.TabIndex = 3;
-            this.btn_Back.Text = "BACK";
-            this.btn_Back.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Back.UseVisualStyleBackColor = false;
-            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
             // formPurchaseOrder
             // 

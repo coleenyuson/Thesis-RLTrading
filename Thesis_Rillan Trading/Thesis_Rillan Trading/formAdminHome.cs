@@ -25,6 +25,7 @@ namespace Thesis_Rillan_Trading
         public Form refInventory { get; set; }
         public Form refCustomer { get; set; }
         public Form refSales { get; set; }
+        public Form refPurchasing { get; set; }
 
         public int ref_empID;
         
@@ -96,6 +97,14 @@ namespace Thesis_Rillan_Trading
             this.Hide();
         }
 
+        private void btn_Purchasing_Click(object sender, EventArgs e)
+        {
+            formPurchasing fPurchase = new formPurchasing();
+            fPurchase.refHome = this;
+            fPurchase.Show();
+            this.Hide();
+        }
+
         //- - - Others - - -
         private void lbl_CompanyName_Click(object sender, EventArgs e)
         {
@@ -126,6 +135,11 @@ namespace Thesis_Rillan_Trading
             this.Close();
         }
 
+        private void pnl_Header_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+       
     }
 }

@@ -72,6 +72,11 @@ namespace Thesis_Rillan_Trading
             this.Dispose(); // clean memory
         }
 
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btn_Login_Click(object sender, EventArgs e)
         {
             try

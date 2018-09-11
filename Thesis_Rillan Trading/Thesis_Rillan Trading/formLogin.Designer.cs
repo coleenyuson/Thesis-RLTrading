@@ -37,7 +37,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_dateTime = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_Cancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbox_Username
@@ -47,7 +50,7 @@
             this.tbox_Username.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.tbox_Username.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbox_Username.ForeColor = System.Drawing.Color.Teal;
-            this.tbox_Username.Location = new System.Drawing.Point(239, 44);
+            this.tbox_Username.Location = new System.Drawing.Point(427, 42);
             this.tbox_Username.Name = "tbox_Username";
             this.tbox_Username.Size = new System.Drawing.Size(195, 30);
             this.tbox_Username.TabIndex = 2;
@@ -60,7 +63,7 @@
             this.tbox_Password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbox_Password.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbox_Password.ForeColor = System.Drawing.Color.Teal;
-            this.tbox_Password.Location = new System.Drawing.Point(239, 80);
+            this.tbox_Password.Location = new System.Drawing.Point(427, 78);
             this.tbox_Password.Name = "tbox_Password";
             this.tbox_Password.PasswordChar = '●';
             this.tbox_Password.Size = new System.Drawing.Size(195, 30);
@@ -77,7 +80,7 @@
             this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Login.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Login.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btn_Login.Location = new System.Drawing.Point(75, 148);
+            this.btn_Login.Location = new System.Drawing.Point(263, 127);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(359, 35);
             this.btn_Login.TabIndex = 7;
@@ -90,7 +93,7 @@
             this.lbl_username.AutoSize = true;
             this.lbl_username.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.lbl_username.ForeColor = System.Drawing.Color.Teal;
-            this.lbl_username.Location = new System.Drawing.Point(71, 50);
+            this.lbl_username.Location = new System.Drawing.Point(259, 48);
             this.lbl_username.Name = "lbl_username";
             this.lbl_username.Size = new System.Drawing.Size(100, 23);
             this.lbl_username.TabIndex = 8;
@@ -102,7 +105,7 @@
             this.lbl_password.AutoSize = true;
             this.lbl_password.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.lbl_password.ForeColor = System.Drawing.Color.Teal;
-            this.lbl_password.Location = new System.Drawing.Point(71, 86);
+            this.lbl_password.Location = new System.Drawing.Point(259, 84);
             this.lbl_password.Name = "lbl_password";
             this.lbl_password.Size = new System.Drawing.Size(100, 23);
             this.lbl_password.TabIndex = 9;
@@ -115,20 +118,45 @@
             this.panel1.Controls.Add(this.lbl_dateTime);
             this.panel1.Location = new System.Drawing.Point(0, 224);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(512, 36);
+            this.panel1.Size = new System.Drawing.Size(658, 36);
             this.panel1.TabIndex = 10;
             // 
             // lbl_dateTime
             // 
             this.lbl_dateTime.AutoSize = true;
-            this.lbl_dateTime.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.lbl_dateTime.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_dateTime.ForeColor = System.Drawing.Color.Snow;
-            this.lbl_dateTime.Location = new System.Drawing.Point(280, 7);
+            this.lbl_dateTime.Location = new System.Drawing.Point(212, 6);
             this.lbl_dateTime.Name = "lbl_dateTime";
-            this.lbl_dateTime.Size = new System.Drawing.Size(83, 23);
+            this.lbl_dateTime.Size = new System.Drawing.Size(80, 23);
             this.lbl_dateTime.TabIndex = 11;
             this.lbl_dateTime.Text = "time date";
             this.lbl_dateTime.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Thesis_Rillan_Trading.Properties.Resources.RillanTradingLogo_transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(33, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Cancel.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cancel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.ForeColor = System.Drawing.Color.Teal;
+            this.btn_Cancel.Location = new System.Drawing.Point(263, 168);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(359, 35);
+            this.btn_Cancel.TabIndex = 12;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.UseVisualStyleBackColor = false;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // formLogin
             // 
@@ -136,7 +164,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(506, 257);
+            this.ClientSize = new System.Drawing.Size(657, 257);
+            this.Controls.Add(this.btn_Cancel);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl_password);
             this.Controls.Add(this.lbl_username);
@@ -145,7 +175,7 @@
             this.Controls.Add(this.tbox_Username);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -157,6 +187,7 @@
             this.Load += new System.EventHandler(this.formLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,6 +202,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_dateTime;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_Cancel;
     }
 }
 

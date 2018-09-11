@@ -28,6 +28,12 @@ namespace Thesis_Rillan_Trading
         
         public Form refviewItems { get; set; }
         public Form refWhse { get; set; }
+        public Form refsuppList { get; set; }
+
+        //Variables needed if Purchase Order was done dependent on reorder point
+        public int ref_suppID { get; set; }
+        public bool ref_ro { get; set; }
+        public int ref_itemID { get; set; }
 
         public List<classItems> itemValues { get; set; }
 
@@ -43,65 +49,33 @@ namespace Thesis_Rillan_Trading
 
         private void formPurchaseOrder_Load(object sender, EventArgs e)
         {
-            tbox_supplier.Enabled = false;
-            btn_itemView.Enabled = false;
-            btn_removeItem.Enabled = false;
-            dtp_docDate.Enabled = false;
-            dtp_orderDate.Enabled = false;
-            tbox_notes.Enabled = false;
+            dtp_docDate.Value = DateTime.Now;
+            dtp_orderDate.Value = DateTime.Now;
 
-            resetSupplierFields();
-
-            // Searching for available supplier
-            try
+            if (ref_ro)
             {
-                conn.Open();
-                MySqlCommand comm = new MySqlCommand("SELECT supp_name FROM supplier", conn);
-                MySqlDataReader read = comm.ExecuteReader();
-                AutoCompleteStringCollection col = new AutoCompleteStringCollection();
-                while (read.Read())
-                {
-                    col.Add(read.GetString(0));
-                }
-                tbox_supplier.AutoCompleteCustomSource = col;
-                conn.Close();
+                tbox_supplier.ReadOnly = true;
+                orderMode();
+                passSupplierInfo();
+                passItems();
             }
-            catch (Exception x)
+            else
             {
-                MessageBox.Show(x.ToString());
-                conn.Close();
-            }
+                tbox_supplier.ReadOnly = false;
+                tbox_supplier.Enabled = false;
+                btn_itemView.Enabled = false;
+                btn_removeItem.Enabled = false;
+                dtp_docDate.Enabled = false;
+                dtp_orderDate.Enabled = false;
+                tbox_notes.Enabled = false;
 
-            //get latest PO ID
-            try
-            {
-                command = new MySqlCommand("SELECT po_id FROM purchase_order ORDER BY po_id DESC LIMIT 1", conn);
-                conn.Open();
-                adapter = new MySqlDataAdapter(command);
-                dataTable = new DataTable();
-                adapter.Fill(dataTable);
-
-                latestPO_id = int.Parse(dataTable.Rows[0]["po_id"].ToString()) + 1;
-                
-                conn.Close();
+                resetSupplierFields();
+                searchSupplier();
+                getLatestPO();
             }
-            catch (Exception x)
-            {
-                MessageBox.Show(x.ToString());
-            }
-
 
         }
-
-        private void resetSupplierFields()
-        {
-            tbox_supplier.Text = "";
-            tbox_notes.Text = "";
-            lbl_suppAddress.Text = "";
-            lbl_suppContactNum.Text = "";
-            lbl_suppFaxNum.Text = "";
-        }
-
+        
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -116,12 +90,26 @@ namespace Thesis_Rillan_Trading
 
         private void btn_itemView_Click(object sender, EventArgs e)
         {
-           
+            viewForm_items fitems = new viewForm_items();
+            DialogResult dr = fitems.ShowDialog(this);
+
+            if (dr == DialogResult.Cancel)
+            {
+                fitems.Close();
+            }
+            else if (dr == DialogResult.OK)
+            {
+                fitems.getItems();
+                fitems.Close();
+
+                dgv_orderLine.Rows.Clear();
+                PODetailsLoad();
+            }
         }
 
         private void btn_Back_Click(object sender, EventArgs e)
         {
-            formWarehouseMgt fWhse = new formWarehouseMgt();
+            formInventoryData fWhse = new formInventoryData();
             fWhse.refPO = this;
             fWhse.Show();
             this.Close();
@@ -167,9 +155,67 @@ namespace Thesis_Rillan_Trading
             addPurchaseOrder();
             addPurchaseLine();
         }
-        
+
         #endregion
 
+        #region Defined Functions
+
+        private void searchSupplier()
+        {
+            // Searching for available supplier
+            try
+            {
+                conn.Open();
+                MySqlCommand comm = new MySqlCommand("SELECT supp_name FROM supplier", conn);
+                MySqlDataReader read = comm.ExecuteReader();
+                AutoCompleteStringCollection col = new AutoCompleteStringCollection();
+                while (read.Read())
+                {
+                    col.Add(read.GetString(0));
+                }
+                tbox_supplier.AutoCompleteCustomSource = col;
+                conn.Close();
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+                conn.Close();
+            }
+        }
+
+        private void resetSupplierFields()
+        {
+            tbox_supplier.Text = "";
+            tbox_notes.Text = "";
+            lbl_suppAddress.Text = "";
+            lbl_suppContactNum.Text = "";
+            lbl_suppFaxNum.Text = "";
+        }
+
+        private int getLatestPO()
+        {
+            //get latest PO ID
+            try
+            {
+                command = new MySqlCommand("SELECT po_id FROM purchase_order ORDER BY po_id DESC LIMIT 1", conn);
+                conn.Open();
+                adapter = new MySqlDataAdapter(command);
+                dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                latestPO_id = int.Parse(dataTable.Rows[0]["po_id"].ToString()) + 1;
+
+                conn.Close();
+
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+            }
+
+            return latestPO_id;
+        }
+        #endregion
 
         private void tbox_supplier_TextChanged(object sender, EventArgs e)
         {
@@ -226,13 +272,14 @@ namespace Thesis_Rillan_Trading
             tbox_supplier.Enabled = true;
             tbox_notes.Enabled = true;
             lbl_status.Text = "";
-            dtp_docDate.Enabled = true;
+            dtp_docDate.Enabled = false;
             dtp_orderDate.Enabled = true;
             dgv_orderLine.Enabled = true;
             btn_itemView.Enabled = true;
             btn_removeItem.Enabled = true;
             btn_addOrder.Visible = true;
             btn_find.Visible = false;
+
             modeChecker = true;
         }
 
@@ -240,26 +287,29 @@ namespace Thesis_Rillan_Trading
         {
             try
             {
-                if (dgv_orderLine.RowCount > 1)
+                if (dgv_orderLine.RowCount > 0)
                 {
-                    for (int i = 0; i <= (dgv_orderLine.RowCount - 1); i++)
+                    for (int i = 0; i <= (dgv_orderLine.RowCount); i++)
                     {
                         int item_id = int.Parse(dgv_orderLine.Rows[i].Cells[0].Value.ToString());
-                        String item_desc = dgv_orderLine.Rows[i].Cells[1].Value.ToString();
-                        int quantity = int.Parse(dgv_orderLine.Rows[i].Cells[2].Value.ToString());
-                        String unit = dgv_orderLine.Rows[i].Cells[3].Value.ToString();
-                        float price = float.Parse(dgv_orderLine.Rows[i].Cells[4].Value.ToString());
+                        string item_code = dgv_orderLine.Rows[i].Cells[1].Value.ToString();
+                        string item_desc = dgv_orderLine.Rows[i].Cells[2].Value.ToString();
+                        string unit = dgv_orderLine.Rows[i].Cells[3].Value.ToString();
+                        int quantity = int.Parse(dgv_orderLine.Rows[i].Cells[4].Value.ToString());
+                        float price = float.Parse(dgv_orderLine.Rows[i].Cells[5].Value.ToString());
+
+                        int id = getLatestPO();
 
                         try
                         {
                             conn.Open();
                             //Inserting  values to MySql Emp table
                             command = conn.CreateCommand();
-                            command.CommandText = "INSERT INTO purchase_order_line (po_id_fk, item_id_fk, item_desc, item_quantity, item_unit, item_price) VALUES " +
-                                                    "('" + latestPO_id + "' , '" + item_id + "' , '" + item_desc + "', '" + quantity + "', '" + unit + "', '" + price + "' )";
+                            command.CommandText = "INSERT INTO purchase_order_line (po_id, item_id_fk, po_line_unit, po_line_quantity, po_line_price) VALUES " +
+                                                    "('" + id + "' , '" + item_id + "' , '" + unit + "', '" + quantity + "',  '" + price + "' )";
 
                             command.ExecuteNonQuery();
-                            MessageBox.Show("Successfully added an purchase line");
+                            MessageBox.Show("Successfully added a purchase line");
                             conn.Close();
                             conn.Dispose();
 
@@ -420,6 +470,60 @@ namespace Thesis_Rillan_Trading
                 }
 
                 conn.Close();
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+                conn.Close();
+            }
+        }
+
+        private void passSupplierInfo ()
+        {
+            try
+            {
+                MySqlCommand comm = new MySqlCommand("SELECT supp_name, supp_address, supp_contactNum, supp_faxNum " +
+                            "FROM supplier WHERE supp_id = '" + ref_suppID + "' ", conn);
+                MySqlDataAdapter adp = new MySqlDataAdapter(comm);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+
+                if (dt.Rows.Count == 1)
+                {
+                    tbox_supplier.Text = dt.Rows[0]["supp_name"].ToString();
+                    lbl_suppAddress.Text = dt.Rows[0]["supp_address"].ToString();
+                    lbl_suppContactNum.Text = dt.Rows[0]["supp_contactNum"].ToString();
+                    lbl_suppFaxNum.Text = dt.Rows[0]["supp_faxNum"].ToString();
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.ToString());
+                conn.Close();
+            }
+        }
+
+        private void passItems ()
+        {
+            try
+            {
+                MySqlCommand comm = new MySqlCommand("SELECT item_id, item_code, item_desc, item_unit, FORMAT(selling_price,2) " +
+                    "FROM item " +
+                    "INNER JOIN item_supplier ON item_id = item_id_fk " +
+                    "WHERE item_id = '" + ref_itemID + "' AND supp_id_fk = '" + ref_suppID + "'", conn);
+                MySqlDataAdapter adp = new MySqlDataAdapter(comm);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+
+                    foreach (DataRow item in dt.Rows)
+                    {
+                        int n = dgv_orderLine.Rows.Add();
+                        dgv_orderLine.Rows[n].Cells[0].Value = item[0].ToString(); // PO ID
+                        dgv_orderLine.Rows[n].Cells[1].Value = item[1].ToString(); // Item Code
+                        dgv_orderLine.Rows[n].Cells[2].Value = item[2].ToString(); // Item Desc
+                        dgv_orderLine.Rows[n].Cells[3].Value = item[3].ToString(); // Item unit
+                        dgv_orderLine.Rows[n].Cells[5].Value = item[4].ToString();
+                    }
             }
             catch (Exception x)
             {
